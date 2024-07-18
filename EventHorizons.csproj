@@ -1,0 +1,31 @@
+
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\tModLoader.targets" />
+  <PropertyGroup>
+    <AssemblyName>EventHorizons</AssemblyName>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Backgrounds\Blackholesky.png" />
+    <None Remove="Enemies\ExposedCrystallineSlime.png" />
+    <None Remove="Enemies\ProtectedCrystallineSlime.png" />
+    <None Remove="Items\Critters\CrystalliteCritter.png" />
+    <None Remove="Items\Materials\CrystalliteSlimeling (2).png" />
+    <None Remove="Items\Weapons\Ammo\bruh.png" />
+    <None Remove="Projectiles\Weapons\Accretion_disc.png" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Textures\Backgrounds\" />
+    <Folder Include="Items\Armors\" />
+    <Folder Include="Tiles\Natural\" />
+  </ItemGroup>
+</Project>
+

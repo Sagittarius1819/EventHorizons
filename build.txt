@@ -1,0 +1,3 @@
+displayName = Event Horizons: A Terraria Mod
+author = Sagittarius And The Team
+version = 0.1
