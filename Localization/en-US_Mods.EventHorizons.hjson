@@ -145,6 +145,7 @@ Projectiles: {
 	Sagi.DisplayName: Sagi
 	Superwaves.DisplayName: Superwaves
 	Accretion_disc.DisplayName: Accretion_disc
+	Explosionvisual.DisplayName: Explosionvisual
 }
 
 Tiles: {

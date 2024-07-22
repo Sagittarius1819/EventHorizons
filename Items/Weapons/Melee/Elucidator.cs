@@ -4,7 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
 
-namespace EventHorizons.Items.Weapons
+namespace EventHorizons.Items.Weapons.Melee
 {
     public class Elucidator : ModItem
     {

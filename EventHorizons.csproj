@@ -1,4 +1,4 @@
-
+﻿
 <Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\tModLoader.targets" />
   <PropertyGroup>
@@ -19,8 +19,6 @@
     <None Remove="Items\Materials\CrystalliteSlimeling (2).png" />
     <None Remove="Items\Weapons\Ammo\bruh.png" />
     <None Remove="Projectiles\Weapons\Accretion_disc.png" />
-  </ItemGroup>
-  <ItemGroup>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Textures\Backgrounds\" />

@@ -2,7 +2,7 @@ using System;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace EventHorizons.Projectiles
+namespace EventHorizons
 {
     public class EventHorizons : Mod
     {

@@ -22,10 +22,12 @@ namespace EventHorizons.Enemies
 
             Main.npcFrameCount[NPC.type] = Main.npcFrameCount[2];
         }
-      
+
         public override void SetDefaults()
         {
             NPC.width = 16;
+            NPCID.Sets.CountsAsCritter[Type] = true;
+            NPCID.Sets.TakesDamageFromHostilesWithoutBeingFriendly[Type] = true;
             NPC.height = 12;
             NPC.damage = 0;
             NPC.defense = 0;
@@ -57,7 +59,14 @@ namespace EventHorizons.Enemies
                 }
             }
         }
+        public override void OnCaughtBy(Player player, Item item, bool failed)
+        {
+            if (failed)
+            {
+                return;
+            }
 
 
+        }
     }
 }

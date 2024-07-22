@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
+﻿using Terraria;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
-using EventHorizons.Tiles;
-using Microsoft.Xna.Framework;
-
-using Terraria.DataStructures;
-
-using EventHorizons.Items.Placeables;
 
 
 namespace EventHorizons.Items.Placeables
@@ -38,7 +27,6 @@ namespace EventHorizons.Items.Placeables
             Item.useTime = 10;
             Item.useTurn = true;
             Item.maxStack = 9999;
-
             Item.createTile = ModContent.TileType<Tiles.Galvanitebar>();
             Item.placeStyle = 1;
         }

@@ -12,7 +12,7 @@ using Terraria.DataStructures;
 using Terraria.Graphics.CameraModifiers;
 
 
-namespace EventHorizons.Items.Weapons
+namespace EventHorizons.Items.Weapons.Ranged
 {
     internal class Singularity : ModItem
     {
