@@ -12,7 +12,7 @@ using Terraria.ModLoader;
 using Terraria;
 using Microsoft.Xna.Framework;
 using EventHorizons.Core.Interfaces;
-using EventHorizons.Items.Materials;
+using EventHorizons.Content.Items.Materials;
 using EventHorizons.Content.Assets.Textures;
 using EventHorizons.Content.Items.Placeables.CrystallineCavernsbiome;
 

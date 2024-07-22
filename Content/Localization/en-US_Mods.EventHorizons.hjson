@@ -150,6 +150,11 @@ Items: {
 		Tooltip: ""
 		DisplayName: Prism Piercer
 	}
+
+	GalvaniteoreItem: {
+		Tooltip: ""
+		DisplayName: Galvaniteore Item
+	}
 }
 
 Projectiles: {
@@ -171,6 +176,8 @@ Tiles: {
 	Galvanitebar.MapEntry: Galvanite bar
 	CrystallineStone.MapEntry: Crystalline Stone
 	some_crystal_block_spritesheet.MapEntry: some_crystal_block_spritesheet
+	GalvanitebarTile.MapEntry: Galvanitebar Tile
+	CrystallineStoneTile.MapEntry: Crystalline Stone Tile
 }
 
 Buffs: {

@@ -2,8 +2,8 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
 using Terraria.GameContent.Creative;
-using EventHorizons.Buffs;
 using EventHorizons.Content.Items.Placeables.Ores;
+using EventHorizons.Content.Buffs;
 
 namespace EventHorizons.Content.Items.Armor.Galvanite
 {
@@ -26,7 +26,7 @@ namespace EventHorizons.Content.Items.Armor.Galvanite
         }
         public override bool IsArmorSet(Item head, Item body, Item legs)
         {
-            return body.type == ItemType<EventHorizons.Items.Armor.GalvaniteBreastplate>() && legs.type == ItemType<GalvaniteLeggings>();
+            return body.type == ItemType<GalvaniteBreastplate>() && legs.type == ItemType<GalvaniteLeggings>();
         }
         public override void UpdateArmorSet(Player player)
         {

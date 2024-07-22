@@ -2,6 +2,7 @@
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
+using EventHorizons.Content.Tiles;
 
 namespace EventHorizons.Content.Items.Placeables.Ores
 {
@@ -26,14 +27,14 @@ namespace EventHorizons.Content.Items.Placeables.Ores
             Item.useTime = 10;
             Item.useTurn = true;
             Item.maxStack = 9999;
-            Item.createTile = TileType<EventHorizons.Content.Tiles.Galvanitebar>();
+            Item.createTile = TileType<GalvanitebarTile>();
             Item.placeStyle = 1;
         }
 
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemType<Galvaniteore>(), 4);
+            recipe.AddIngredient(ItemType<GalvaniteoreItem>(), 4);
             recipe.AddTile(TileID.Hellforge);
             recipe.Register();
         }

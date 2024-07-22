@@ -2,6 +2,7 @@
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
+using EventHorizons.Content.Tiles;
 
 
 namespace EventHorizons.Content.Items.Placeables.CrystallineCavernsbiome
@@ -26,7 +27,7 @@ namespace EventHorizons.Content.Items.Placeables.CrystallineCavernsbiome
             Item.useStyle = 1;
             Item.useTime = 10;
             Item.useTurn = true;
-            Item.createTile = TileType<EventHorizons.Content.Tiles.CrystallineStone>();
+            Item.createTile = TileType<CrystallineStoneTile>();
         }
 
 

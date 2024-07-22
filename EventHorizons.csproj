@@ -28,7 +28,6 @@
     <None Remove="Content\Projectiles\Weapons\Accretion_disc.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\Items\Armors\" />
     <Folder Include="Content\Tiles\Natural\" />
   </ItemGroup>
 </Project>

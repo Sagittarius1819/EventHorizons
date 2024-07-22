@@ -7,7 +7,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using EventHorizons.Items.Materials;
+using EventHorizons.Content.Items.Materials;
 using Terraria.Audio;
 using EventHorizons.Content.Items.Critters.CrystallineCavernCritters;
 

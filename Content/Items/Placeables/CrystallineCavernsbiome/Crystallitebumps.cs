@@ -37,7 +37,7 @@ namespace EventHorizons.Content.Items.Placeables.CrystallineCavernsbiome
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemType<Galvaniteore>(), 4);
+            recipe.AddIngredient(ItemType<GalvaniteoreItem>(), 4);
             recipe.AddTile(TileID.Hellforge);
             recipe.Register();
         }

@@ -2,7 +2,7 @@
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
-using EventHorizons.Items.Placeables;
+using EventHorizons.Content.Items.Placeables;
 using EventHorizons.Content.Items.Materials;
 using EventHorizons.Content.Projectiles.Weapons;
 

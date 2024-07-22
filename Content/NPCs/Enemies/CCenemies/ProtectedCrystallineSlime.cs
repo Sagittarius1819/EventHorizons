@@ -33,7 +33,7 @@ namespace EventHorizons.Content.NPCs.Enemies.CCenemies
             NPC.value = 300f;
             NPC.aiStyle = 1;
             NPC.HitSound = SoundID.Item4;
-            NPC.DeathSound = new SoundStyle("EventHorizons/Assets/Sounds/Short_Crystal_Soul_S") with
+            NPC.DeathSound = new SoundStyle("EventHorizons/Content/Assets/Sounds/Short_Crystal_Soul_S") with
             {
                 Volume = 0.5f,
                 Pitch = 0.5f,

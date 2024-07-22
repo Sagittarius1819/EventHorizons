@@ -4,7 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria;
 using Microsoft.Xna.Framework;
-using EventHorizons.Items.Materials;
+using EventHorizons.Content.Items.Materials;
 using EventHorizons.Content.Items.Placeables.CrystallineCavernsbiome;
 
 namespace EventHorizons.Content.Items.Weapons.Melee.PrismPiercer
@@ -101,7 +101,7 @@ namespace EventHorizons.Content.Items.Weapons.Melee.PrismPiercer
             }
             {
                 // Fade out over time
-                Projectile.alpha += 6; // Increase alpha (transparency) by 3 each tick
+                Projectile.alpha += 3; // Increase alpha (transparency) by 3 each tick
                 if (Projectile.alpha > 255)
                 {
                     Projectile.alpha = 255; // Cap the alpha value at 255 (fully transparent)
@@ -130,14 +130,14 @@ namespace EventHorizons.Content.Items.Weapons.Melee.PrismPiercer
             return w;
         }
 
-        //public override bool PreDraw(ref Color lightColor)
-        //    {
-        //   default(Trail).Draw(Projectile, TrailColor, TrailWidth);
+        public override bool PreDraw(ref Color lightColor)
+            {
+           //default(Trail).Draw(Projectile, TrailColor, TrailWidth);
 
-        // Projectile.SimpleDrawProjectile(TextureAssets.Projectile[Type].Value, Color.White, true, 1f);
+         Projectile.SimpleDrawProjectile(TextureAssets.Projectile[Type].Value, Color.White, true, 1f);
 
-        //    return false;
-        //}
-        //Remove this and the slashes when Trail is added again
+            return false;
+        }
+
     }
 }

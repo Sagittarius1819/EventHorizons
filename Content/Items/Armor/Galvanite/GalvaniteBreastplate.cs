@@ -2,13 +2,13 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
 using Terraria.GameContent.Creative;
-using EventHorizons.Buffs;
+using EventHorizons.Content.Buffs;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using EventHorizons.Projectiles;
+using EventHorizons.Content.Projectiles;
 using EventHorizons.Content.Items.Placeables.Ores;
 
 namespace EventHorizons.Content.Items.Armor.Galvanite

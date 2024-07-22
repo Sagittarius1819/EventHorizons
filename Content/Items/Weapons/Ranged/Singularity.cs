@@ -2,8 +2,8 @@
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
-using EventHorizons.Items.Placeables;
-using EventHorizons.Projectiles.Weapons;
+using EventHorizons.Content.Items.Placeables;
+using EventHorizons.Content.Projectiles.Weapons;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria.Audio;

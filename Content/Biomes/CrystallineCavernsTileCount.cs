@@ -10,7 +10,7 @@ namespace EventHorizons.Content.Biomes
 
         public override void TileCountsAvailable(ReadOnlySpan<int> tileCounts)
         {
-            CrystallineStoneCount = tileCounts[TileType<CrystallineStone>()];
+            CrystallineStoneCount = tileCounts[TileType<CrystallineStoneTile>()];
         }
     }
 }

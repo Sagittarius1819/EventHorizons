@@ -43,7 +43,7 @@ namespace EventHorizons.Content.Items.Weapons.Ranged
 
         public override bool? UseItem(Player player)
         {
-            SoundStyle usesound = new("EventHorizons/Assets/Sounds/beep");
+            SoundStyle usesound = new("EventHorizons/Content/Assets/Sounds/beep");
 
 
 
