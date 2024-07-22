@@ -12,12 +12,15 @@
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Assets\Textures\Misc\MuzzleFlash.png" />
     <None Remove="Backgrounds\Blackholesky.png" />
     <None Remove="Enemies\ExposedCrystallineSlime.png" />
     <None Remove="Enemies\ProtectedCrystallineSlime.png" />
     <None Remove="Items\Critters\CrystalliteCritter.png" />
     <None Remove="Items\Materials\CrystalliteSlimeling (2).png" />
     <None Remove="Items\Weapons\Ammo\bruh.png" />
+    <None Remove="Items\Weapons\Crystalline\CrystallinePistol.png" />
+    <None Remove="Items\Weapons\Crystalline\CrystallinePistol_Glow.png" />
     <None Remove="Projectiles\Weapons\Accretion_disc.png" />
   </ItemGroup>
   <ItemGroup>

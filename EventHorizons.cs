@@ -1,14 +1,14 @@
-using System;
-using Terraria;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Terraria.ModLoader;
 
 namespace EventHorizons
 {
     public class EventHorizons : Mod
     {
-        internal static int ProjectileType(Star star)
-        {
-            throw new NotImplementedException();
-        }
+        public static EventHorizons Instance => GetInstance<EventHorizons>();
+
     }
 }
