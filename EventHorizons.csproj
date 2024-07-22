@@ -23,6 +23,8 @@
     <None Remove="Items\Weapons\Ammo\bruh.png" />
     <None Remove="Items\Weapons\Crystalline\CrystallinePistol.png" />
     <None Remove="Items\Weapons\Crystalline\CrystallinePistol_Glow.png" />
+    <None Remove="Items\Weapons\Crystalline\PrismPiercer.png" />
+    <None Remove="Items\Weapons\Crystalline\PrismPiercer_Projectile.png" />
     <None Remove="Projectiles\Weapons\Accretion_disc.png" />
   </ItemGroup>
   <ItemGroup>

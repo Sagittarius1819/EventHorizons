@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Terraria.Graphics.Shaders;
 using Terraria;
 using System.Runtime.InteropServices;
+using Terraria.Graphics;
 
 namespace EventHorizons.Core.Primitives
 {
@@ -22,7 +23,7 @@ namespace EventHorizons.Core.Primitives
         /// <param name="proj">The proj to draw to.</param>
         /// <param name="col">The color to draw with.</param>
         /// <param name="width">The width of the trail.</param>
-        public static void Draw(Projectile proj, VertexStrip.StripColorFunction col, VertexStrip.StripHalfWidthFunction width, bool UseBacksides = true, bool TryFixingMissalignment = false)
+        public void Draw(Projectile proj, VertexStrip.StripColorFunction col, VertexStrip.StripHalfWidthFunction width, bool UseBacksides = true, bool TryFixingMissalignment = false)
         {
             MiscShaderData miscShaderData = GameShaders.Misc["RainbowRod"];
 
@@ -47,7 +48,7 @@ namespace EventHorizons.Core.Primitives
         /// <param name="proj">The proj to draw to.</param>
         /// <param name="col">The color to draw with.</param>
         /// <param name="width">The width of the trail.</param>
-        public static void Draw(Projectile proj, VertexStrip.StripColorFunction col, VertexStrip.StripHalfWidthFunction width)
+        public void Draw(Projectile proj, VertexStrip.StripColorFunction col, VertexStrip.StripHalfWidthFunction width)
         {
             MiscShaderData miscShaderData = GameShaders.Misc["FlameLash"];
 

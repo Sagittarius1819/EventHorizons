@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EventHorizons.Core.DataStructures
 {
-    public struct VertexInfo2D(Vector2 position, Color color, Vector3 texCoord) : IVertexType
+    public struct VertexInfo2D(Vector2 position, Color color, Vector2 texCoord) : IVertexType
     {
         private static VertexDeclaration _vertexDeclaration = new(
         [
@@ -19,7 +19,7 @@ namespace EventHorizons.Core.DataStructures
 
         public Vector2 position = position;
         public Color color = color;
-        public Vector3 texCoord = texCoord;
+        public Vector2 texCoord = texCoord;
 
         public readonly override string ToString() => $"[{position}, {color}, {texCoord}]";
         

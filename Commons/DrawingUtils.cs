@@ -147,7 +147,7 @@ namespace EventHorizons.Commons
         {
             Texture2D afterimageTexture = TextureRegistry.GlowLarge.Value;
 
-            for (float i = 0; i < ProjectileID.Sets.TrailCacheLength[Projectile.type]; i += 0.25f)
+            for (float i = 0; i < ProjectileID.Sets.TrailCacheLength[Projectile.type]; i += 0.4f)
             {
                 Color color = colors[0] * Projectile.Opacity * 0.75f;
 
@@ -169,12 +169,11 @@ namespace EventHorizons.Commons
                 Vector2 center = Vector2.Lerp(Projectile.oldPos[(int)i], Projectile.oldPos[max0], 1 - i % 1);
                 center += Projectile.Size / 2;
 
-                float scaleMult = Lerp(1f, 0.01f, i / ProjectileID.Sets.TrailCacheLength[Projectile.type]);
+                float scaleMult = Lerp(1f, 0.2f, i / ProjectileID.Sets.TrailCacheLength[Projectile.type]);
 
-                Main.EntitySpriteDraw(afterimageTexture, center - Main.screenPosition + new Vector2(0, Projectile.gfxOffY), null, color, rot, afterimageTexture.Size() / 2f, scales[0] * Projectile.scale * scaleMult, SpriteEffects.None, 0);
-                Main.EntitySpriteDraw(afterimageTexture, center - Main.screenPosition + new Vector2(0, Projectile.gfxOffY), null, color2, rot, afterimageTexture.Size() / 2f, scales[1] * Projectile.scale * scaleMult, SpriteEffects.None, 0);
-                Main.EntitySpriteDraw(afterimageTexture, center - Main.screenPosition + new Vector2(0, Projectile.gfxOffY), null, color3, rot, afterimageTexture.Size() / 2f, scales[2] * Projectile.scale * scaleMult, SpriteEffects.None, 0);
-
+                Main.EntitySpriteDraw(afterimageTexture, center - Main.screenPosition + new Vector2(0, Projectile.gfxOffY), null, color with { A = 0 }, rot, afterimageTexture.Size() / 2f, scales[0] * Projectile.scale * scaleMult, SpriteEffects.None, 0);
+                Main.EntitySpriteDraw(afterimageTexture, center - Main.screenPosition + new Vector2(0, Projectile.gfxOffY), null, color2 with { A = 0 }, rot, afterimageTexture.Size() / 2f, scales[1] * Projectile.scale * scaleMult, SpriteEffects.None, 0);
+                Main.EntitySpriteDraw(afterimageTexture, center - Main.screenPosition + new Vector2(0, Projectile.gfxOffY), null, color3 with { A = 0 }, rot, afterimageTexture.Size() / 2f, scales[2] * Projectile.scale * scaleMult, SpriteEffects.None, 0);
             }
         }
     }
