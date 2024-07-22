@@ -4,7 +4,7 @@ using ReLogic.Content;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace EventHorizons.Backgrounds
+namespace EventHorizons.Assets.Textures.Backgrounds
 {
     public class Blackholesky : ModMenu
     {
@@ -18,20 +18,20 @@ namespace EventHorizons.Backgrounds
         }
         public override bool PreDrawLogo(SpriteBatch spriteBatch, ref Vector2 logoDrawCenter, ref float logoRotation, ref float logoScale, ref Color drawColor)
         {
-            Texture2D MenuBG = ModContent.Request<Texture2D>("EventHorizons/Backgrounds/Blackholesky").Value;
-            float width = (float)Main.screenWidth / (float)MenuBG.Width;
-            float height = (float)Main.screenHeight / (float)MenuBG.Height;
+            Texture2D MenuBG = Request<Texture2D>("EventHorizons/Backgrounds/Blackholesky").Value;
+            float width = Main.screenWidth / (float)MenuBG.Width;
+            float height = Main.screenHeight / (float)MenuBG.Height;
             Vector2 zero = Vector2.Zero;
             if (width != height)
             {
                 if (height > width)
                 {
                     width = height;
-                    zero.X -= ((float)MenuBG.Width * width - (float)Main.screenWidth) * 0.5f;
+                    zero.X -= (MenuBG.Width * width - Main.screenWidth) * 0.5f;
                 }
                 else
                 {
-                    zero.Y -= ((float)MenuBG.Height * width - (float)Main.screenHeight) * 0.5f;
+                    zero.Y -= (MenuBG.Height * width - Main.screenHeight) * 0.5f;
                 }
             }
             spriteBatch.Draw(

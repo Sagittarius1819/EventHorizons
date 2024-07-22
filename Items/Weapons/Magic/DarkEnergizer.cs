@@ -28,7 +28,7 @@ namespace EventHorizons.Items.Weapons.Magic
             Item.rare = 4;
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
-            Item.shoot = ModContent.ProjectileType<Accretion_disc>();
+            Item.shoot = ProjectileType<Accretion_disc>();
             Item.shootsEveryUse = true;
             Item.shootSpeed = 10.5f;
 
@@ -49,8 +49,8 @@ namespace EventHorizons.Items.Weapons.Magic
             recipe.AddIngredient(ItemID.TitaniumBar, 14);
             recipe.AddIngredient(ItemID.FallenStar, 5);
             recipe.AddIngredient(ItemID.BreakerBlade, 1);
-            recipe.AddIngredient(ModContent.ItemType<Galvanitebar>(), 5);
-            recipe.AddIngredient(ModContent.ItemType<SpaceDust>(), 5);
+            recipe.AddIngredient(ItemType<Galvanitebar>(), 5);
+            recipe.AddIngredient(ItemType<SpaceDust>(), 5);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
 
@@ -58,8 +58,8 @@ namespace EventHorizons.Items.Weapons.Magic
             recipe2.AddIngredient(ItemID.AdamantiteBar, 14);
             recipe2.AddIngredient(ItemID.FallenStar, 5);
             recipe2.AddIngredient(ItemID.BreakerBlade, 1);
-            recipe2.AddIngredient(ModContent.ItemType<Galvanitebar>(), 5);
-            recipe.AddIngredient(ModContent.ItemType<SpaceDust>(), 5);
+            recipe2.AddIngredient(ItemType<Galvanitebar>(), 5);
+            recipe.AddIngredient(ItemType<SpaceDust>(), 5);
             recipe2.AddTile(TileID.MythrilAnvil);
             recipe2.Register();
         }

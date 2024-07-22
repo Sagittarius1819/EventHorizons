@@ -140,6 +140,11 @@ Items: {
 		DisplayName: Crystalline Pistol
 		Tooltip: ""
 	}
+
+	PrismPiercer: {
+		Tooltip: ""
+		DisplayName: Prism Piercer
+	}
 }
 
 Projectiles: {
@@ -152,6 +157,7 @@ Projectiles: {
 	Accretion_disc.DisplayName: Accretion_disc
 	CrystallinePistolHoldout.DisplayName: Crystalline Pistol Holdout
 	Explosionvisual.DisplayName: Explosionvisual
+	PrismPiercerProjectile.DisplayName: Prism Piercer Projectile
 }
 
 Tiles: {

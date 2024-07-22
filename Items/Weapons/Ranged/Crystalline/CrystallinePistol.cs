@@ -16,7 +16,7 @@ using EventHorizons.Assets.Textures;
 using EventHorizons.Items.Materials;
 using EventHorizons.Items.Placeables;
 
-namespace EventHorizons.Items.Weapons.Crystalline
+namespace EventHorizons.Items.Weapons.Ranged.Crystalline
 {
     internal class CrystallinePistol : ModItem, IGlowmaskItem
     {
@@ -57,8 +57,8 @@ namespace EventHorizons.Items.Weapons.Crystalline
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Handgun);
-            recipe.AddIngredient(ModContent.ItemType<Crystallite>(), 25);
-            recipe.AddIngredient(ModContent.ItemType<CrystallineStone>(), 30);
+            recipe.AddIngredient(ItemType<Crystallite>(), 25);
+            recipe.AddIngredient(ItemType<CrystallineStone>(), 30);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }
@@ -80,8 +80,8 @@ namespace EventHorizons.Items.Weapons.Crystalline
 
         public override void SetDefaults()
         {
-            Projectile.width = 40;
-            Projectile.height = 32;
+            Projectile.width = 20;
+            Projectile.height = 16;
             Projectile.alpha = 0;
             Projectile.penetrate = -1;
             Projectile.tileCollide = false;
@@ -119,7 +119,7 @@ namespace EventHorizons.Items.Weapons.Crystalline
                     int type = ProjectileID.Bullet;
                     Owner.PickAmmo(Owner.HeldItem, out type, out float spd, out int dmg, out float kb, out int _);
 
-                    if(type == ProjectileID.Bullet) //musket balls => crystal shards
+                    if (type == ProjectileID.Bullet) //musket balls => crystal shards
                     {
                         type = ProjectileID.CrystalBullet; //for now
                     }
