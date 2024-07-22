@@ -225,18 +225,18 @@ namespace EventHorizons.Items.Weapons.Crystalline
             Vector2 originM = sourceRectangleM.Size() / 2f;
 
             Vector2 drawPos = Projectile.Center - Main.screenPosition;
-            Vector2 muzzleFlashPos = drawPos + (Projectile.velocity * Projectile.width * 0.8f + new Vector2(0f, -7f));
-            Vector2 muzzleFlashPos2 = drawPos + (Projectile.velocity * Projectile.width * 0.685f + new Vector2(0f, -7f));
+            Vector2 muzzleFlashPos = drawPos + (Projectile.velocity * Projectile.width * 0.84f + new Vector2(0f, -7f));
+            Vector2 muzzleFlashPos2 = drawPos + (Projectile.velocity * Projectile.width * 0.7f + new Vector2(0f, -7f));
 
             Main.EntitySpriteDraw(texture, drawPos, sourceRectangle, Projectile.GetAlpha(lightColor), Projectile.rotation, origin, Projectile.scale, spriteEffects, 0);
 
             if (Charge >= 12 && Charge <= 13)
             {
-                Main.EntitySpriteDraw(flash, muzzleFlashPos, sourceRectangleM, Color.Lerp(Color.MediumPurple, Color.MediumVioletRed, 0.4f) with { A = 0 }, Projectile.rotation, originM, Projectile.scale * 0.1f * new Vector2(0.9f, 0.5f) * Lerp(1f, 0f, (Charge - 12) / 2), spriteEffects, 0);
+                Main.EntitySpriteDraw(flash, muzzleFlashPos, sourceRectangleM, Color.Lerp(Color.MediumPurple, Color.MediumVioletRed, 0.4f) with { A = 0 }, Projectile.rotation, originM, Projectile.scale * 0.16f * new Vector2(0.9f, 0.5f) * Lerp(1f, 0f, (Charge - 12) / 2), spriteEffects, 0);
 
                 Main.spriteBatch.Reload(BlendState.Additive);
 
-                Main.EntitySpriteDraw(flash, muzzleFlashPos2, sourceRectangleM, Color.Lerp(Color.MediumVioletRed, Color.White, 0.8f), Projectile.rotation, originM, Projectile.scale * 0.07f * new Vector2(0.87f, 0.5f) * Lerp(1f, 0f, (Charge - 12) / 2), spriteEffects, 0);
+                Main.EntitySpriteDraw(flash, muzzleFlashPos2, sourceRectangleM, Color.Lerp(Color.MediumVioletRed, Color.White, 0.8f), Projectile.rotation, originM, Projectile.scale * 0.12f * new Vector2(0.87f, 0.5f) * Lerp(1f, 0f, (Charge - 12) / 2), spriteEffects, 0);
 
                 Main.spriteBatch.Reload(BlendState.AlphaBlend);
             }
