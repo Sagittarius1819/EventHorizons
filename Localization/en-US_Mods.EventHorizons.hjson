@@ -149,6 +149,7 @@ Items: {
 	QuartzCrasher: {
 		Tooltip: ""
 		DisplayName: Quartz Crasher
+		Tooltip: ""
 	}
 }
 

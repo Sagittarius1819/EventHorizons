@@ -12,23 +12,23 @@
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Assets\Textures\Backgrounds\Blackholesky.png" />
-    <None Remove="Assets\Textures\Backgrounds\ModLogo.png" />
+    <None Remove="Assets\Textures\Misc\Extra_98.png" />
+    <None Remove="Assets\Textures\Misc\GlowBallLarge.png" />
     <None Remove="Assets\Textures\Misc\MuzzleFlash.png" />
+    <None Remove="Backgrounds\Blackholesky.png" />
     <None Remove="Enemies\ExposedCrystallineSlime.png" />
     <None Remove="Enemies\ProtectedCrystallineSlime.png" />
     <None Remove="Items\Critters\CrystalliteCritter.png" />
     <None Remove="Items\Materials\CrystalliteSlimeling (2).png" />
     <None Remove="Items\Weapons\Ammo\bruh.png" />
-    <None Remove="Items\Weapons\Melee\PrismPiercer\PrismPiercer.png" />
-    <None Remove="Items\Weapons\Melee\PrismPiercer\PrismPiercerProjectile.png" />
-    <None Remove="Items\Weapons\Ranged\Crystalline\CrystallinePistol.png" />
-    <None Remove="Items\Weapons\Ranged\Crystalline\CrystallinePistol_Glow.png" />
-    <None Remove="Items\Weapons\Summoner\QCwhipprojectile.png" />
-    <None Remove="Items\Weapons\Summoner\QuartzCrasher.png" />
+    <None Remove="Items\Weapons\Crystalline\CrystallinePistol.png" />
+    <None Remove="Items\Weapons\Crystalline\CrystallinePistol_Glow.png" />
+    <None Remove="Items\Weapons\Crystalline\PrismPiercer.png" />
+    <None Remove="Items\Weapons\Crystalline\PrismPiercer_Projectile.png" />
     <None Remove="Projectiles\Weapons\Accretion_disc.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Assets\Textures\Backgrounds\" />
     <Folder Include="Items\Armors\" />
     <Folder Include="Tiles\Natural\" />
   </ItemGroup>

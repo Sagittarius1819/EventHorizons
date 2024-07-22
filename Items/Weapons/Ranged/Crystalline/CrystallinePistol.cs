@@ -20,7 +20,7 @@ namespace EventHorizons.Items.Weapons.Ranged.Crystalline
 {
     internal class CrystallinePistol : ModItem, IGlowmaskItem
     {
-        public Color GlowEmitColor => Color.Red;
+        public Color GlowEmitColor => Color.Violet;
 
         public override void SetDefaults()
         {
@@ -53,15 +53,8 @@ namespace EventHorizons.Items.Weapons.Ranged.Crystalline
             Projectile.NewProjectile(source, player.MountedCenter, velocity, ProjectileType<CrystallinePistolHoldout>(), damage, knockback, player.whoAmI);
             return false;
         }
-        public override void AddRecipes()
-        {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.Handgun);
-            recipe.AddIngredient(ItemType<Crystallite>(), 25);
-            recipe.AddIngredient(ItemType<CrystallineStone>(), 30);
-            recipe.AddTile(TileID.Anvils);
-            recipe.Register();
-        }
+
+        public override void AddRecipes() => CreateRecipe().AddIngredient<CrystallineStone>(30).AddIngredient<Crystallite>(25).AddTile(TileID.Anvils).Register();
     }
 
     public class CrystallinePistolHoldout : ModProjectile
