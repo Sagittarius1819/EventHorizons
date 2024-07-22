@@ -13,6 +13,8 @@ using Terraria;
 using Microsoft.Xna.Framework;
 using EventHorizons.Core.Interfaces;
 using EventHorizons.Assets.Textures;
+using EventHorizons.Items.Materials;
+using EventHorizons.Items.Placeables;
 
 namespace EventHorizons.Items.Weapons.Crystalline
 {
@@ -22,7 +24,7 @@ namespace EventHorizons.Items.Weapons.Crystalline
 
         public override void SetDefaults()
         {
-            Item.damage = 14;
+            Item.damage = 30;
             Item.width = 40;
             Item.height = 33;
             Item.useTime = 20;
@@ -50,6 +52,15 @@ namespace EventHorizons.Items.Weapons.Crystalline
         {
             Projectile.NewProjectile(source, player.MountedCenter, velocity, ProjectileType<CrystallinePistolHoldout>(), damage, knockback, player.whoAmI);
             return false;
+        }
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.Handgun);
+            recipe.AddIngredient(ModContent.ItemType<Crystallite>(), 25);
+            recipe.AddIngredient(ModContent.ItemType<CrystallineStone>(), 30);
+            recipe.AddTile(TileID.Anvils);
+            recipe.Register();
         }
     }
 

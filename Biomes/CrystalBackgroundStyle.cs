@@ -1,5 +1,6 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
+using EventHorizons.Assets.Textures;
 
 namespace EventHorizons.Biomes
 {
