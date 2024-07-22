@@ -1,4 +1,4 @@
-﻿using EventHorizons.Assets.Textures;
+﻿using EventHorizons.Content.Assets.Textures;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Reflection;

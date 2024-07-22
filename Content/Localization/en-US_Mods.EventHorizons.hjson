@@ -1,0 +1,205 @@
+# This file will automatically update with entries for new content after a build and reload
+
+Items: {
+	Sagittarius: {
+		DisplayName: Sagittarius
+		Tooltip: The blade is so sharp it could split an atom into two.
+	}
+
+	CrystalliteCritter: {
+		DisplayName: Crystallite Slimeling
+		Tooltip: The fish yearn for the crystals.
+	}
+
+	QuartzCrasher: {
+		Tooltip: The Spinal Tap's Big crystalline brother. Performs better against multiple targets than most whips.
+		DisplayName: Quartz Crasher
+	}
+
+	Chaotos: {
+		DisplayName: Chaotos
+		Tooltip: The blade is so sharp it could split an atom into two.
+	}
+
+	Galvaniteore: {
+		DisplayName: Galvanite Ore
+		Tooltip: "'batteries not included'"
+	}
+
+	Galvanitebar: {
+		DisplayName: Galvanite bar
+		Tooltip: "'Out of this world!'"
+	}
+
+	GalvaniteBreastplate: {
+		DisplayName: ShockTropper Suit
+		Tooltip: ""
+	}
+
+	GalvaniteHelmet: {
+		DisplayName: Shocktrooper Headwear
+		Tooltip: ""
+	}
+
+	GalvaniteLeggings: {
+		DisplayName: Shocktrooper Greaves
+		Tooltip: ""
+	}
+
+	Galvanitewaraxe: {
+		DisplayName: Galvanite War Axe
+		Tooltip: Infused with electrical ore from the heavens.
+	}
+
+	GalvaniteHammer: {
+		DisplayName: Galvanite Micro-Hammer
+		Tooltip: "'Size doesn't matter'"
+	}
+
+	PlasmaBlast: {
+		DisplayName: Plasma Blast
+		Tooltip: Fires an uncontrollable bouncing bullet
+	}
+
+	PhotonicBoom: {
+		DisplayName: Photonic Boom
+		Tooltip: A plasma gun, specifically designed to fire Plasma Blasts.
+	}
+
+	SpaceDust: {
+		DisplayName: Space Dust
+		Tooltip: Used to craft space related items
+	}
+
+	Quazar: {
+		DisplayName: Quazar
+		Tooltip: ""
+	}
+
+	Singularity: {
+		DisplayName: Singularity
+		Tooltip: ""
+	}
+
+	boomdoomBoots: {
+		DisplayName: boomdoom Boots
+		Tooltip: Made from shadows
+	}
+
+	boomdoomCoat: {
+		DisplayName: boomdoom Coat
+		Tooltip: Made from shadows
+	}
+
+	Elucidator: {
+		DisplayName: Elucidator
+		Tooltip: Made from shadows
+	}
+
+	StellarFabric: {
+		DisplayName: Stellar Fabric
+		Tooltip: ""
+	}
+
+	CrystallineStone: {
+		DisplayName: Crystalline Stone
+		Tooltip: ""
+	}
+
+	Crystallite: {
+		DisplayName: Crystallite
+		Tooltip: ""
+	}
+
+	Crystallitebumps: {
+		DisplayName: Crystallitebumps
+		Tooltip: ""
+	}
+
+	SELU: {
+		DisplayName: S E L U
+		Tooltip: ""
+	}
+
+	SLEU: {
+		Tooltip: ""
+		DisplayName: S L E U
+	}
+
+	VoidEnergy: {
+		DisplayName: Void Energy
+		Tooltip: ""
+	}
+
+	Galaxy_Cannon: {
+		DisplayName: Galaxy_ Cannon
+		Tooltip: ""
+	}
+
+	DarkEnergizer: {
+		DisplayName: Dark Energizer
+		Tooltip: ""
+	}
+
+	CrystallinePistol: {
+		DisplayName: Crystalline Pistol
+		Tooltip: ""
+	}
+
+	PrismPiercer: {
+		Tooltip: ""
+		DisplayName: Prism Piercer
+	}
+}
+
+Projectiles: {
+	Chaos.DisplayName: Chaos
+	PlasmaBlastProjectile.DisplayName: Plasma Blast
+	Signal.DisplayName: Signal
+	Waves.DisplayName: Waves
+	Sagi.DisplayName: Sagi
+	Superwaves.DisplayName: Superwaves
+	Accretion_disc.DisplayName: Accretion_disc
+	CrystallinePistolHoldout.DisplayName: Crystalline Pistol Holdout
+	Explosionvisual.DisplayName: Explosionvisual
+	PrismPiercerProjectile.DisplayName: Prism Piercer Projectile
+	QCwhipprojectile.DisplayName: Q Cwhipprojectile
+}
+
+Tiles: {
+	Galvaniteore.MapEntry: Galvanite ore
+	Galvanitebar.MapEntry: Galvanite bar
+	CrystallineStone.MapEntry: Crystalline Stone
+	some_crystal_block_spritesheet.MapEntry: some_crystal_block_spritesheet
+}
+
+Buffs: {
+	Shocked: {
+		DisplayName: Shocked
+		Description: It stings....
+	}
+
+	Sagibuff: {
+		DisplayName: Sagibuff
+		Description: Mods.EventHorizons.Buffs.Sagibuff.Description
+	}
+}
+
+NPCs: {
+	JetpackSlime.DisplayName: Jetpack Slime
+	ProtectedCrystallineSlime.DisplayName: Protected Crystalline Slime
+	ExposedCrystallineSlime.DisplayName: Exposed Crystalline Slime
+	CrystalliteSlimeling.DisplayName: Crystallite Slimeling
+}
+
+Biomes: {
+	ExampleUndergroundBiome: {
+		DisplayName: Example Underground Biome
+		TownNPCDialogueName: the Example Underground Biome
+	}
+
+	Class1: {
+		DisplayName: Class1
+		TownNPCDialogueName: the Class1
+	}
+}

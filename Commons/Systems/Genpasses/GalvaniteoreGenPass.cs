@@ -1,4 +1,4 @@
-﻿using EventHorizons.Tiles;
+﻿using EventHorizons.Content.Tiles;
 using Terraria;
 using Terraria.IO;
 using Terraria.ModLoader;

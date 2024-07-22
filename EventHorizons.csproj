@@ -12,25 +12,24 @@
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Assets\Textures\Misc\Extra_98.png" />
-    <None Remove="Assets\Textures\Misc\GlowBallLarge.png" />
-    <None Remove="Assets\Textures\Misc\MuzzleFlash.png" />
+    <None Remove="Content\Assets\Textures\Misc\Extra_98.png" />
+    <None Remove="Content\Assets\Textures\Misc\GlowBallLarge.png" />
+    <None Remove="Content\Assets\Textures\Misc\MuzzleFlash.png" />
     <None Remove="Backgrounds\Blackholesky.png" />
-    <None Remove="Enemies\ExposedCrystallineSlime.png" />
-    <None Remove="Enemies\ProtectedCrystallineSlime.png" />
-    <None Remove="Items\Critters\CrystalliteCritter.png" />
-    <None Remove="Items\Materials\CrystalliteSlimeling (2).png" />
-    <None Remove="Items\Weapons\Ammo\bruh.png" />
-    <None Remove="Items\Weapons\Crystalline\CrystallinePistol.png" />
-    <None Remove="Items\Weapons\Crystalline\CrystallinePistol_Glow.png" />
-    <None Remove="Items\Weapons\Crystalline\PrismPiercer.png" />
-    <None Remove="Items\Weapons\Crystalline\PrismPiercer_Projectile.png" />
-    <None Remove="Projectiles\Weapons\Accretion_disc.png" />
+    <None Remove="Content\NPCs\ExposedCrystallineSlime.png" />
+    <None Remove="Content\NPCs\ProtectedCrystallineSlime.png" />
+    <None Remove="Content\Items\Critters\CrystalliteCritter.png" />
+    <None Remove="Content\Items\Materials\CrystalliteSlimeling (2).png" />
+    <None Remove="Content\Items\Weapons\Ammo\bruh.png" />
+    <None Remove="Content\Items\Weapons\Crystalline\CrystallinePistol.png" />
+    <None Remove="Content\Items\Weapons\Crystalline\CrystallinePistol_Glow.png" />
+    <None Remove="Content\Items\Weapons\Crystalline\PrismPiercer.png" />
+    <None Remove="Content\Items\Weapons\Crystalline\PrismPiercer_Projectile.png" />
+    <None Remove="Content\Projectiles\Weapons\Accretion_disc.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\Textures\Backgrounds\" />
-    <Folder Include="Items\Armors\" />
-    <Folder Include="Tiles\Natural\" />
+    <Folder Include="Content\Items\Armors\" />
+    <Folder Include="Content\Tiles\Natural\" />
   </ItemGroup>
 </Project>
 
