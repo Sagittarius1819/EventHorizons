@@ -1,15 +1,15 @@
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using EventHorizons.Projectiles;
+using EventHorizons.Projectiles.Weapons;
 using EventHorizons.Items.Placeables;
 using EventHorizons.Items.Materials;
 
-namespace EventHorizons.Items.Weapons
+namespace EventHorizons.Items.Weapons.Magic
 {
-    public class Chaotos : ModItem
+    public class DarkEnergizer : ModItem
     {
         // The Display Name and Tooltip of this item can be edited in the Localization/en-US_Mods.EventHorizons.hjson file.
 
@@ -17,7 +17,7 @@ namespace EventHorizons.Items.Weapons
         public override void SetDefaults()
         {
             Item.damage = 78;
-            Item.DamageType = DamageClass.Melee;
+            Item.DamageType = DamageClass.Magic;
             Item.width = 74;
             Item.height = 74;
             Item.useTime = 25;
@@ -28,7 +28,7 @@ namespace EventHorizons.Items.Weapons
             Item.rare = 4;
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
-            Item.shoot = ModContent.ProjectileType<Chaos>();
+            Item.shoot = ModContent.ProjectileType<Accretion_disc>();
             Item.shootsEveryUse = true;
             Item.shootSpeed = 10.5f;
 

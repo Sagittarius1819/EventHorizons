@@ -20,7 +20,7 @@ namespace EventHorizons.Items.Tools
             Item.useTime = 13;
             Item.useAnimation = 13;
             Item.autoReuse = true;
-            Item.useStyle = 1;
+            Item.useStyle = ItemUseStyleID.Swing;
             Item.UseSound = SoundID.Item1;
             Item.useTurn = true;
             Item.DamageType = DamageClass.Melee;

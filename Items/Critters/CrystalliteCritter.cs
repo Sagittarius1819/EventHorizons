@@ -1,24 +1,11 @@
-﻿using Microsoft.Xna.Framework;
-using EventHorizons.Enemies;
+﻿using EventHorizons.Enemies;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
-using EventHorizons.Enemies;
-using EventHorizons.Items.Materials;
-using Terraria.Audio;
 
 namespace EventHorizons.Items.Critters
 {
-	public class CrystalliteCritter : ModItem
+    public class CrystalliteCritter : ModItem
 	{
 
 
@@ -29,15 +16,14 @@ namespace EventHorizons.Items.Critters
 			Item.maxStack = 99;
 			Item.value = Item.sellPrice(0, 0, 1, 0);
 			Item.useTime = Item.useAnimation = 20;
-			Item.bait = 35;
+			Item.useAnimation = 25;
+            Item.autoReuse = true;
+            Item.useStyle = ItemUseStyleID.Swing;
+            Item.bait = 35;
 			Item.noMelee = true;
 			Item.consumable = true;
-			Item.autoReuse = true;
+            Item.makeNPC = ModContent.NPCType<CrystalliteSlimeling>();
 
-		}
-        public override void OnConsumeItem(Player player)
-        {
-           
         }
-    }
+	}
 }

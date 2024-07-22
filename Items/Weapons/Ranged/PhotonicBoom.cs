@@ -2,12 +2,12 @@
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
-using EventHorizons.Items.Placeables;
+using EventHorizons.Items.Weapons.Ammo;
 using EventHorizons.Items.Materials;
 
-namespace EventHorizons.Items.Weapons
+namespace EventHorizons.Items.Weapons.Ranged
 {
-    internal class Quazar : ModItem
+    internal class PhotonicBoom : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -22,24 +22,22 @@ namespace EventHorizons.Items.Weapons
             Item.useStyle = 5;
             Item.autoReuse = false;
             Item.DamageType = DamageClass.Ranged;
-            Item.damage = 48;
+            Item.damage = 35;
             Item.knockBack = 30;
             Item.UseSound = SoundID.Item96;
             Item.noMelee = true;
             Item.shoot = ProjectileID.Bullet;
-            Item.shootSpeed = 6f;
+            Item.shootSpeed = 5f;
             Item.useAmmo = AmmoID.Bullet;
 
         }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ModContent.ItemType<PlasmaBlast>(), 50);
             recipe.AddIngredient(ModContent.ItemType<SpaceDust>(), 5);
-            recipe.AddIngredient(ModContent.ItemType<PhotonicBoom>(), 1);
-            recipe.AddIngredient(ItemID.FallenStar, 5);
-            recipe.AddIngredient(ItemID.SoulofLight, 5);
-            recipe.AddIngredient(ModContent.ItemType<Galvanitebar>(), 5);
-            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.AddIngredient(ItemID.PhoenixBlaster, 1);
+            recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }
     }

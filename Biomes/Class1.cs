@@ -30,7 +30,7 @@ namespace EventHorizons.Biomes
 			// Limit the biome height to be underground in either rock layer or dirt layer
 			return (player.ZoneRockLayerHeight || player.ZoneDirtLayerHeight) &&
 				// Check how many tiles of our biome are present, such that biome should be active
-				ModContent.GetInstance<CrystallineCavernsTileCount>().CrystallineStoneCount >= 40 &&
+				ModContent.GetInstance<CrystallineCavernsTileCount>().CrystallineStoneCount >= 125 &&
 				// Limit our biome to be in only the horizontal center third of the world.
 				Math.Abs(player.position.ToTileCoordinates().X - Main.maxTilesX / 2) < Main.maxTilesX / 6;
 		}
