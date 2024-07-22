@@ -145,6 +145,11 @@ Items: {
 		Tooltip: ""
 		DisplayName: Prism Piercer
 	}
+
+	QuartzCrasher: {
+		Tooltip: ""
+		DisplayName: Quartz Crasher
+	}
 }
 
 Projectiles: {
@@ -158,6 +163,7 @@ Projectiles: {
 	CrystallinePistolHoldout.DisplayName: Crystalline Pistol Holdout
 	Explosionvisual.DisplayName: Explosionvisual
 	PrismPiercerProjectile.DisplayName: Prism Piercer Projectile
+	QCwhipprojectile.DisplayName: Q Cwhipprojectile
 }
 
 Tiles: {

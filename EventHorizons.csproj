@@ -24,6 +24,8 @@
     <None Remove="Items\Weapons\Melee\PrismPiercer\PrismPiercerProjectile.png" />
     <None Remove="Items\Weapons\Ranged\Crystalline\CrystallinePistol.png" />
     <None Remove="Items\Weapons\Ranged\Crystalline\CrystallinePistol_Glow.png" />
+    <None Remove="Items\Weapons\Summoner\QCwhipprojectile.png" />
+    <None Remove="Items\Weapons\Summoner\QuartzCrasher.png" />
     <None Remove="Projectiles\Weapons\Accretion_disc.png" />
   </ItemGroup>
   <ItemGroup>
