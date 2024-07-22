@@ -59,7 +59,7 @@ namespace EventHorizons.Enemies
         {
             // Main.NewNPC(x, y, type);
             // Here, x and y are the coordinates, and type is the NPC type ID of the second enemy
-            NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.position.X, (int)NPC.position.Y, ModContent.NPCType<ExposedCrystallineSlime>());
+            NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.position.X, (int)NPC.position.Y, NPCType<ExposedCrystallineSlime>());
         }
     }
 }

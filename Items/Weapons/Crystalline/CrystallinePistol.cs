@@ -13,12 +13,13 @@ using Terraria;
 using Microsoft.Xna.Framework;
 using EventHorizons.Core.Interfaces;
 using EventHorizons.Assets.Textures;
+using EventHorizons.Items.Placeables;
 
 namespace EventHorizons.Items.Weapons.Crystalline
 {
     internal class CrystallinePistol : ModItem, IGlowmaskItem
     {
-        public Color GlowEmitColor => Color.Red;
+        public Color GlowEmitColor => Color.Violet;
 
         public override void SetDefaults()
         {
@@ -51,6 +52,8 @@ namespace EventHorizons.Items.Weapons.Crystalline
             Projectile.NewProjectile(source, player.MountedCenter, velocity, ProjectileType<CrystallinePistolHoldout>(), damage, knockback, player.whoAmI);
             return false;
         }
+
+        public override void AddRecipes() => CreateRecipe().AddIngredient<CrystallineStone>(30).AddIngredient<Crystallite>(25).AddTile(TileID.Anvils).Register();
     }
 
     public class CrystallinePistolHoldout : ModProjectile

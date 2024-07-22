@@ -22,7 +22,7 @@ namespace EventHorizons.Tiles
             TileObjectData.newTile.DrawYOffset = -4;
             TileObjectData.newTile.AnchorTop = new AnchorData(AnchorType.SolidTile, TileObjectData.newTile.Width, 0);
             TileObjectData.newTile.AnchorBottom = default;
-            TileObjectData.newTile.AnchorValidTiles = new int[] { ModContent.TileType<some_crystal_block_spritesheet>() };
+            TileObjectData.newTile.AnchorValidTiles = new int[] {TileType<some_crystal_block_spritesheet>() };
             TileObjectData.addTile(Type);
             DustType = DustID.Corruption;
         }
