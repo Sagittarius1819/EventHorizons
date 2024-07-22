@@ -54,7 +54,7 @@ namespace EventHorizons.Items.Weapons.Ranged.Crystalline
             return false;
         }
 
-        public override void AddRecipes() => CreateRecipe().AddIngredient<CrystallineStone>(30).AddIngredient<Crystallite>(25).AddTile(TileID.Anvils).Register();
+        public override void AddRecipes() => CreateRecipe().AddIngredient<CrystallineStone>(30).AddIngredient<Crystallite>(25).AddIngredient(ItemID.Handgun).AddTile(TileID.Anvils).Register();
     }
 
     public class CrystallinePistolHoldout : ModProjectile

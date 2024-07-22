@@ -4,6 +4,8 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria;
 using Microsoft.Xna.Framework;
+using EventHorizons.Items.Materials;
+using EventHorizons.Items.Placeables;
 
 namespace EventHorizons.Items.Weapons.Melee.PrismPiercer
 {
@@ -29,8 +31,26 @@ namespace EventHorizons.Items.Weapons.Melee.PrismPiercer
             Item.shoot = ModContent.ProjectileType<PrismPiercerProjectile>();
             Item.shootSpeed = 12f; //might need to be changed
         }
-
-        public override void AddRecipes() => CreateRecipe().Register();
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.GoldBroadsword, 14);
+            recipe.AddIngredient(ItemID.FallenStar, 3);
+            recipe.AddIngredient(ItemID.Bone, 15);
+            recipe.AddIngredient(ItemType<Crystallite>(), 25);
+            recipe.AddIngredient(ItemType<CrystallineStone>(), 35);
+            recipe.AddTile(TileID.Anvils);
+            recipe.Register();
+            //Alt recipe for platinum
+            Recipe recipe1 = CreateRecipe();
+            recipe1.AddIngredient(ItemID.PlatinumBroadsword, 14);
+            recipe1.AddIngredient(ItemID.FallenStar, 3);
+            recipe1.AddIngredient(ItemID.Bone, 15);
+            recipe1.AddIngredient(ItemType<Crystallite>(), 25);
+            recipe1.AddIngredient(ItemType<CrystallineStone>(), 35);
+            recipe1.AddTile(TileID.Anvils);
+            recipe1.Register();
+        }
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
             float numberProjectiles = 3;

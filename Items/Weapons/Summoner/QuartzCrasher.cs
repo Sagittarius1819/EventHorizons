@@ -1,28 +1,11 @@
-﻿using EventHorizons.Items.Materials;
-using EventHorizons.Items.Placeables;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+﻿using EventHorizons.Items.Placeables;
 using System.Collections.Generic;
 using Terraria;
-using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
-using Terraria;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace EventHorizons.Items.Weapons.Summoner
 {
@@ -33,7 +16,7 @@ namespace EventHorizons.Items.Weapons.Summoner
             {
                 // This method quickly sets the whip's properties.
                 // Mouse over to see its parameters.
-                Item.DefaultToWhip(ModContent.ProjectileType<QCwhipprojectile>(), 20, 2, 4);
+                Item.DefaultToWhip(ModContent.ProjectileType<QCwhipprojectile>(), 35, 2, 4);
                 Item.rare = ItemRarityID.Green;
                 Item.channel = true;
             }
@@ -72,12 +55,6 @@ namespace EventHorizons.Items.Weapons.Summoner
         {
             get => Projectile.ai[0];
             set => Projectile.ai[0] = value;
-        }
-
-        private float ChargeTime
-        {
-            get => Projectile.ai[1];
-            set => Projectile.ai[1] = value;
         }
 
 
@@ -136,8 +113,8 @@ namespace EventHorizons.Items.Weapons.Summoner
                 if (i == list.Count - 2)
                 {
                     // This is the head of the whip. You need to measure the sprite to figure out these values.
-                    frame.Y = 74; // Distance from the top of the sprite to the start of the frame.
-                    frame.Height = 18; // Height of the frame.
+                    frame.Y = 20; // Distance from the top of the sprite to the start of the frame.
+                    frame.Height = 20; // Height of the frame.
 
                     // For a more impactful look, this scales the tip of the whip up when fully extended, and down when curled up.
                     Projectile.GetWhipSettings(Projectile, out float timeToFlyOut, out int _, out float _);
@@ -147,13 +124,13 @@ namespace EventHorizons.Items.Weapons.Summoner
                 else if (i > 10)
                 {
                     // Third segment
-                    frame.Y = 58;
+                    frame.Y = 36;
                     frame.Height = 16;
                 }
                 else if (i > 5)
                 {
                     // Second Segment
-                    frame.Y = 42;
+                    frame.Y = 36;
                     frame.Height = 16;
                 }
                 else if (i > 0)
