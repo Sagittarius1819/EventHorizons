@@ -3,7 +3,6 @@ using Terraria.ModLoader;
 using Terraria.ID;
 using Terraria.GameContent.ItemDropRules;
 using EventHorizons.Items.Materials;
-using Terraria.ModLoader;
 using Terraria.Audio;
 
 namespace EventHorizons.General

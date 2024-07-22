@@ -135,6 +135,11 @@ Items: {
 		DisplayName: Dark Energizer
 		Tooltip: ""
 	}
+
+	CrystallinePistol: {
+		DisplayName: Crystalline Pistol
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -145,6 +150,7 @@ Projectiles: {
 	Sagi.DisplayName: Sagi
 	Superwaves.DisplayName: Superwaves
 	Accretion_disc.DisplayName: Accretion_disc
+	CrystallinePistolHoldout.DisplayName: Crystalline Pistol Holdout
 }
 
 Tiles: {
