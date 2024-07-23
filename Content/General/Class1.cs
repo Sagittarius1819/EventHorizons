@@ -4,6 +4,7 @@ using Terraria.ID;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.Audio;
 using EventHorizons.Content.Items.Materials;
+using System.Linq;
 
 namespace EventHorizons.Content.General
 {
@@ -16,4 +17,15 @@ namespace EventHorizons.Content.General
         }
 
     }
+    internal class KingSlimeMusic : ModSceneEffect
+    {
+        public override SceneEffectPriority Priority => SceneEffectPriority.BossHigh;
+        public override bool IsSceneEffectActive(Player player)
+        {
+            return Main.npc.Any(n => n.active && n.type == NPCID.KingSlime);
+        }
+
+        public override int Music => MusicLoader.GetMusicSlot(Mod, "Content/Assets/Music/Boss/KStheme"); //make sure the music file is in a Music folder!
+    }
 }
+    

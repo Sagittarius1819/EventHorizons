@@ -12,6 +12,10 @@
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Content\Assets\Textures\Backgrounds\crystal_0.png" />
+    <None Remove="Content\Assets\Textures\Backgrounds\crystal_1.png" />
+    <None Remove="Content\Assets\Textures\Backgrounds\crystal_2.png" />
+    <None Remove="Content\Assets\Textures\Backgrounds\crystal_3.png" />
     <None Remove="Content\Assets\Textures\Misc\Extra_98.png" />
     <None Remove="Content\Assets\Textures\Misc\GlowBallLarge.png" />
     <None Remove="Content\Assets\Textures\Misc\MuzzleFlash.png" />
@@ -28,6 +32,7 @@
     <None Remove="Content\Projectiles\Weapons\Accretion_disc.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\Assets\Music\Biome\" />
     <Folder Include="Content\Tiles\Natural\" />
   </ItemGroup>
 </Project>

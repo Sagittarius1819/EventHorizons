@@ -14,7 +14,7 @@ namespace EventHorizons.Content.Biomes
         public override ModUndergroundBackgroundStyle UndergroundBackgroundStyle => GetInstance<CrystalBackgroundStyle>();
 
         // Select Music
-        public override int Music => MusicLoader.GetMusicSlot("EventHorizons/Content/Assets/Music/Let_It_Be_The_Crystal");
+        public override int Music => MusicLoader.GetMusicSlot("EventHorizons/Content/Assets/Music/Biome/Let_It_Be_The_Crystal");
 
         // Sets how the Scene Effect associated with this biome will be displayed with respect to vanilla Scene Effects. For more information see SceneEffectPriority & its values.
         public override SceneEffectPriority Priority => SceneEffectPriority.BiomeLow; // We have set the SceneEffectPriority to be BiomeLow for purpose of example, however default behavior is BiomeLow.

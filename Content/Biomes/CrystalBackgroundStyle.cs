@@ -8,10 +8,10 @@ namespace EventHorizons.Content.Biomes
     {
         public override void FillTextureArray(int[] textureSlots)
         {
-            textureSlots[0] = BackgroundTextureLoader.GetBackgroundSlot("EventHorizons/Content/Assets/Backgrounds/CrystalBiome");
-            textureSlots[1] = BackgroundTextureLoader.GetBackgroundSlot("EventHorizons/Content/Assets/Backgrounds/CrystalBiomeOne");
-            textureSlots[2] = BackgroundTextureLoader.GetBackgroundSlot("EventHorizons/Content/Assets/Backgrounds/CrystalBiomeTwo");
-            textureSlots[3] = BackgroundTextureLoader.GetBackgroundSlot("EventHorizons/Content/Assets/Backgrounds/CrystalBiomeThree");
+            textureSlots[0] = BackgroundTextureLoader.GetBackgroundSlot("EventHorizons/Content/Assets/Textures/Backgrounds/Crystal/Crystal_0");
+            textureSlots[1] = BackgroundTextureLoader.GetBackgroundSlot("EventHorizons/Content/Assets/Textures/Backgrounds/Crystal/Crystal_1");
+            textureSlots[2] = BackgroundTextureLoader.GetBackgroundSlot("EventHorizons/Content/Assets/Textures/Backgrounds/Crystal/Crystal_2");
+            textureSlots[3] = BackgroundTextureLoader.GetBackgroundSlot("EventHorizons/Content/Assets/Textures/Backgrounds/Crystal/Crystal_3");
         }
     }
 }
