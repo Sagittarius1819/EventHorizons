@@ -32,7 +32,6 @@
     <None Remove="Content\Projectiles\Weapons\Accretion_disc.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\Assets\Music\Biome\" />
     <Folder Include="Content\Tiles\Natural\" />
   </ItemGroup>
 </Project>
