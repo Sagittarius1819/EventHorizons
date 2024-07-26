@@ -24,23 +24,7 @@ namespace EventHorizons.Content.Biomes
                         fades[i] = 0f;
                     }
                 }
-               
             }
         }
-        public override int ChooseFarTexture()
-        {
-            return BackgroundTextureLoader.GetBackgroundSlot("EventHorizons/Content/Assets/Textures/Backgrounds/SpaceBackgroundFar");
-        }
-
-        public override int ChooseMiddleTexture()
-        {
-            return BackgroundTextureLoader.GetBackgroundSlot("EventHorizons/Content/Assets/Textures/Backgrounds/SpaceBackgroundMid");
-        }
-
-        public override int ChooseCloseTexture(ref float scale, ref double parallax, ref float a, ref float b)
-        {
-            return BackgroundTextureLoader.GetBackgroundSlot("EventHorizons/Content/Assets/Textures/Backgrounds/SpaceBackgroundClose");
-        }
-
     }
-    }
+}
