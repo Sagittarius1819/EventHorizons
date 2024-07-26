@@ -11,10 +11,10 @@ namespace EventHorizons.Content.Assets.Textures
 {
     public static class TextureRegistry
     {
-        public static Asset<Texture2D> MuzzleFlash => Request<Texture2D>("EventHorizons/Assets/Textures/Misc/MuzzleFlash", AssetRequestMode.ImmediateLoad);
+        public static Asset<Texture2D> MuzzleFlash => Request<Texture2D>("EventHorizons/Content/Assets/Textures/Misc/MuzzleFlash", AssetRequestMode.ImmediateLoad);
 
-        public static Asset<Texture2D> HalfStar => Request<Texture2D>("EventHorizons/Assets/Textures/Misc/Extra_98", AssetRequestMode.ImmediateLoad);
+        public static Asset<Texture2D> HalfStar => Request<Texture2D>("EventHorizons/Content/Assets/Textures/Misc/Extra_98", AssetRequestMode.ImmediateLoad);
 
-        public static Asset<Texture2D> GlowLarge => Request<Texture2D>("EventHorizons/Assets/Textures/Misc/GlowBallLarge", AssetRequestMode.ImmediateLoad);
+        public static Asset<Texture2D> GlowLarge => Request<Texture2D>("EventHorizons/Content/Assets/Textures/Misc/GlowBallLarge", AssetRequestMode.ImmediateLoad);
     }
 }
