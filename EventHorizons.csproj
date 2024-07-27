@@ -34,6 +34,8 @@
     <None Remove="Content\Items\Weapons\Crystalline\PrismPiercer.png" />
     <None Remove="Content\Items\Weapons\Crystalline\PrismPiercer_Projectile.png" />
     <None Remove="Content\Projectiles\Weapons\Accretion_disc.png" />
+    <None Remove="Content\Tiles\EvolutionTable\EvolutionTableItem.png" />
+    <None Remove="Content\Tiles\EvolutionTable\EvolutionTableS1.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Tiles\Natural\" />

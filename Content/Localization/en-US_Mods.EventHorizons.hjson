@@ -155,6 +155,11 @@ Items: {
 		Tooltip: ""
 		DisplayName: Galvaniteore Item
 	}
+
+	EvolutionTableItem: {
+		DisplayName: Evolution Table Item
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
