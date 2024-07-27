@@ -6,6 +6,7 @@ using Terraria;
 using Microsoft.Xna.Framework;
 using EventHorizons.Content.Items.Materials;
 using EventHorizons.Content.Items.Placeables.CrystallineCavernsbiome;
+using EventHorizons.Core.Primitives;
 
 namespace EventHorizons.Content.Items.Weapons.Melee.PrismPiercer
 {
@@ -94,6 +95,11 @@ namespace EventHorizons.Content.Items.Weapons.Melee.PrismPiercer
         {
             Projectile.spriteDirection = Projectile.direction = (Projectile.velocity.X > 0).ToDirectionInt();
             Projectile.rotation = Projectile.velocity.ToRotation() + (Projectile.spriteDirection == -1 ? -PiOver2 : PiOver2);
+            Projectile.alpha += 3; // Increase alpha (transparency) by 3 each tick
+            if (Projectile.alpha > 255)
+            {
+                Projectile.alpha = 255; // Cap the alpha value at 255 (fully transparent)
+            }
             if (Projectile.ai[2] == 0)
             {
                 Projectile.frame = Main.rand.Next(4);
@@ -101,7 +107,7 @@ namespace EventHorizons.Content.Items.Weapons.Melee.PrismPiercer
             }
             {
                 // Fade out over time
-                Projectile.alpha += 3; // Increase alpha (transparency) by 3 each tick
+                Projectile.alpha += 6; // Increase alpha (transparency) by 3 each tick
                 if (Projectile.alpha > 255)
                 {
                     Projectile.alpha = 255; // Cap the alpha value at 255 (fully transparent)
@@ -132,7 +138,7 @@ namespace EventHorizons.Content.Items.Weapons.Melee.PrismPiercer
 
         public override bool PreDraw(ref Color lightColor)
             {
-           //default(Trail).Draw(Projectile, TrailColor, TrailWidth);
+           default(Trail).Draw(Projectile, TrailColor, TrailWidth);
 
          Projectile.SimpleDrawProjectile(TextureAssets.Projectile[Type].Value, Color.White, true, 1f);
 
