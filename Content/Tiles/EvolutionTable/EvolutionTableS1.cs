@@ -21,13 +21,9 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
             Main.tileMergeDirt[Type] = true;
             Main.tileBlockLight[Type] = true;
             TileID.Sets.DisableSmartCursor[Type] = true;
-            TileObjectData.newTile.Width = 3;
-            TileObjectData.newTile.Height = 2;
-            TileObjectData.newTile.CoordinateHeights = [16, 18];
-            AddMapEntry(new Color(200, 200, 200));
-
-            // Specify other properties and add dust, etc.
+            TileObjectData.newTile.CopyFrom(TileObjectData.Style3x2);
             TileObjectData.addTile(Type);
+            AddMapEntry(new Color(200, 200, 200));
         }
 
         public override bool RightClick(int i, int j)
