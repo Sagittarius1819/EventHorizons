@@ -14,7 +14,7 @@ namespace EventHorizons.Commons
         {
             if (vec == Vector2.Zero)
             {
-                return new Vector2(0.001f, 0.001f);
+                return new Vector2(0f, 0.001f);
             }
 
             return Vector2.Normalize(vec);

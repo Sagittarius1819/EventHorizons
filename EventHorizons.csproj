@@ -12,6 +12,9 @@
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Assets\Textures\Misc\BeamEnd.png" />
+    <None Remove="Assets\Textures\Misc\BeamMiddle.png" />
+    <None Remove="Assets\Textures\Misc\BeamStart.png" />
     <None Remove="Assets\Textures\Misc\Extra_98.png" />
     <None Remove="Assets\Textures\Misc\GlowBallLarge.png" />
     <None Remove="Assets\Textures\Misc\MuzzleFlash.png" />

@@ -20,7 +20,7 @@ namespace EventHorizons.Commons.Systems.Genpasses
                 int x = WorldGen.genRand.Next(100, Main.maxTilesX - 100);
                 int y = WorldGen.genRand.Next((int)Main.worldSurface * 0, (int)((int)Main.worldSurface * 0.50f));
 
-                WorldGen.TileRunner(x, y, WorldGen.genRand.Next(3, 5), WorldGen.genRand.Next(2, 3), ModContent.TileType<Galvaniteore>());
+                WorldGen.TileRunner(x, y, WorldGen.genRand.Next(3, 5), WorldGen.genRand.Next(2, 3), TileType<Galvaniteore>());
             }
         }
        

@@ -158,6 +158,8 @@ Projectiles: {
 	CrystallinePistolHoldout.DisplayName: Crystalline Pistol Holdout
 	Explosionvisual.DisplayName: Explosionvisual
 	PrismPiercerProjectile.DisplayName: Prism Piercer Projectile
+	GalaxyCannonHoldout.DisplayName: Galaxy Cannon Holdout
+	GalaxyLaser.DisplayName: Galaxy Laser
 }
 
 Tiles: {
