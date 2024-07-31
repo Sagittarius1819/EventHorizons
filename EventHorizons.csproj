@@ -12,6 +12,9 @@
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Commons\Systems\WorldGen.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove="Content\Assets\Textures\Backgrounds\crystal_0.png" />
     <None Remove="Content\Assets\Textures\Backgrounds\crystal_1.png" />
     <None Remove="Content\Assets\Textures\Backgrounds\crystal_2.png" />
@@ -36,6 +39,11 @@
     <None Remove="Content\Projectiles\Weapons\Accretion_disc.png" />
     <None Remove="Content\Tiles\EvolutionTable\EvolutionTableItem.png" />
     <None Remove="Content\Tiles\EvolutionTable\EvolutionTableS1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SerousCommonLib">
+      <HintPath>..\..\ModReader\SerousCommonLib\SerousCommonLib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Tiles\Natural\" />

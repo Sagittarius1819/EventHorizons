@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria;
-using Microsoft.Xna.Framework;
 using Terraria.ObjectData;
 
 namespace EventHorizons.Content.Tiles.EvolutionTable
@@ -30,13 +25,11 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
         {
             if (Main.myPlayer == Main.LocalPlayer.whoAmI)
             {
-                // Debug message to verify if RightClick is being called
-                Main.NewText("RightClick detected", 255, 255, 0);
-
-                // Open the custom UI
-                ModContent.GetInstance<EventHorizons>().OpenEvolutionTableS1UI();
+                var system = ModContent.GetInstance<EvolutionTableUISystem>();
+                system.TilePosition = new Vector2(i, j);
+                system.Toggle();
             }
-            return true; // Return true to indicate that the right-click action was handled
+            return true;
         }
     }
 }
