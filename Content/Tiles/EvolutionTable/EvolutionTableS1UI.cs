@@ -1,7 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using SerousCommonLib.UI;
 using System.Linq;
+using Terraria.Audio;
 using Terraria.GameContent.UI.Elements;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.UI;
 using Terraria.UI;
@@ -74,11 +76,18 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
             {
                 if (recipe.CheckForRecipe(ingredients))
                 {
-                    foreach (EnhancedItemSlotV2 slot in Slots) slot.SetBoundItem(null);
-                    Slots[4].SetBoundItem(recipe.Result);
+                    Craft(recipe);
                     return;
                 }
             }
+            return;
+        }
+
+        private void Craft(EvoTableRecipe recipe)
+        {
+            SoundEngine.PlaySound(SoundID.Item176 with { Pitch = -0.2f });
+            foreach (EnhancedItemSlotV2 slot in Slots) slot.StoredItem.TurnToAir();
+            Slots[4].SetBoundItem(recipe.Result.Clone());
         }
     }
 }
