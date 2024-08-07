@@ -4,6 +4,10 @@ using System.Linq;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.UI;
+using Terraria.ID;
+using EventHorizons.Content.Items.Materials;
+using EventHorizons.Content.Items.Placeables.Ores;
+using EventHorizons.Content.Items.Weapons.Ranged.Crystalline;
 
 namespace EventHorizons.Content.Tiles.EvolutionTable
 {
@@ -12,7 +16,7 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
         private UserInterface CustomInterface;
         public Vector2 TilePosition;
         public EvolutionTableS1UI CustomUI;
-        public List<EvoTableRecipe> ValidRecipes = []; // O(1) recipe lookup with hashset of hashset of ingredients?
+        public List<CrystalGlockRecipe> ValidRecipes = []; // O(1) recipe lookup with hashset of hashset of ingredients?
 
         public override void Load()
         {
@@ -24,13 +28,13 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
             }
 
             // Example recipe:
-            //RegisterRecipe(
-            //    new Item(ItemID.BrokenHeroSword),
-            //    new Item(ItemID.HallowedBar, 4),
-            //    new Item(ItemID.TrueExcalibur),
-            //    new Item(ItemID.TrueNightsEdge),
-            //    new Item(ItemID.TerraBlade)
-            //);
+            RegisterRecipe(
+                new Item(ItemID.Handgun),
+                new Item(ModContent.ItemType<CrystallineCore>(), 3),
+                new Item(ModContent.ItemType<CrystalliteBar>(), 3),
+                new Item(ModContent.ItemType<CrystallinePistol>())
+            );
+
         }
 
         public void Show()
@@ -83,20 +87,21 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
             }
         }
 
-        public void RegisterRecipe(Item in1, Item in2, Item in3, Item in4, Item res)
+        public void RegisterRecipe(Item in1, Item in2, Item in3, Item res)
         {
-            ValidRecipes.Add(new EvoTableRecipe(in1, in2, in3, in4, res));
+            ValidRecipes.Add(new CrystalGlockRecipe(in1, in2, in3, res));
+
         }
     }
 
-    public class EvoTableRecipe
+    public class CrystalGlockRecipe
     {
         public HashSet<(int, int)> Ingredients;
         public Item Result;
 
-        public EvoTableRecipe(Item in1, Item in2, Item in3, Item in4, Item res)
+        public CrystalGlockRecipe(Item in1, Item in2, Item in3, Item res)
         {
-            Ingredients = [(in1.type, in1.stack), (in2.type, in2.stack), (in3.type, in3.stack), (in4.type, in4.stack)];
+            Ingredients = [(in1.type, in1.stack), (in2.type, in2.stack), (in3.type, in3.stack)];
             Result = res;
         }
 

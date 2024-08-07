@@ -160,6 +160,11 @@ Items: {
 		DisplayName: Evolution Table Item
 		Tooltip: ""
 	}
+
+	HiddenShortsword: {
+		DisplayName: Hidden Shortsword
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -174,6 +179,7 @@ Projectiles: {
 	Explosionvisual.DisplayName: Explosionvisual
 	PrismPiercerProjectile.DisplayName: Prism Piercer Projectile
 	QCwhipprojectile.DisplayName: Q Cwhipprojectile
+	HiddenBladeProjectile.DisplayName: Hidden Blade Projectile
 }
 
 Tiles: {

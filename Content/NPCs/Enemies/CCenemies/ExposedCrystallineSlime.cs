@@ -8,6 +8,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using EventHorizons.Content.NPCs.Critters.CCcritters;
+using EventHorizons.Content.Items.Materials;
 
 namespace EventHorizons.Content.NPCs.Enemies.CCenemies
 {
@@ -22,6 +23,7 @@ namespace EventHorizons.Content.NPCs.Enemies.CCenemies
         }
         public override void OnKill()
         {
+            NPCLoot();
             // Randomly decide to spawn 2 or 3 enemies
             int numberOfSpawns = Main.rand.Next(3, 6); // 2 to 3
 
@@ -55,6 +57,20 @@ namespace EventHorizons.Content.NPCs.Enemies.CCenemies
                 NPC.frameCounter = 0;
             }
             NPC.frame.Y = (int)NPC.frameCounter / 10 * frameHeight;
+        }
+
+        public void NPCLoot()
+        {
+            if (Main.rand.NextFloat() < 0.5f) // 50% chance
+            {
+                int Meteoritecount = Main.rand.Next(0, 4); // Generates a number between 1 and 3
+                for (int i = 0; i < Meteoritecount; i++)
+                {
+                    Item.NewItem(NPC.GetSource_Loot(), NPC.getRect(), ItemID.Meteorite, 1);
+                }
+            }
+                Item.NewItem(NPC.GetSource_Loot(), NPC.getRect(), ModContent.ItemType<CrystallineCore>(), 1);
+            // Add other drops as needed
         }
 
     }

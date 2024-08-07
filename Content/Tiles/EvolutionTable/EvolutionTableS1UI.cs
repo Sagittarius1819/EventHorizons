@@ -5,6 +5,7 @@ using Terraria.GameContent.UI.Elements;
 using Terraria.ModLoader;
 using Terraria.ModLoader.UI;
 using Terraria.UI;
+using EventHorizons.Content.Tiles.EvolutionTable;
 
 namespace EventHorizons.Content.Tiles.EvolutionTable
 {
@@ -70,7 +71,7 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
             if (!Slots[4].StoredItem.IsAir) return;
 
             var ingredients = Slots[0..4].Select((s) => s.StoredItem);
-            foreach (EvoTableRecipe recipe in ModContent.GetInstance<EvolutionTableUISystem>().ValidRecipes)
+            foreach (CrystalGlockRecipe recipe in ModContent.GetInstance<EvolutionTableUISystem>().ValidRecipes)
             {
                 if (recipe.CheckForRecipe(ingredients))
                 {

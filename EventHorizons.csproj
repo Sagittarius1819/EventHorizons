@@ -27,6 +27,9 @@
     <None Remove="Content\Assets\Textures\Misc\GlowBallLarge.png" />
     <None Remove="Content\Assets\Textures\Misc\MuzzleFlash.png" />
     <None Remove="Backgrounds\Blackholesky.png" />
+    <None Remove="Content\Items\Materials\CrystallineCore.png" />
+    <None Remove="Content\Items\Placeables\Ores\CrystalliteBar.png" />
+    <None Remove="Content\Items\Weapons\Melee\HiddenShortsword\HiddenShortsword.png" />
     <None Remove="Content\NPCs\ExposedCrystallineSlime.png" />
     <None Remove="Content\NPCs\ProtectedCrystallineSlime.png" />
     <None Remove="Content\Items\Critters\CrystalliteCritter.png" />
@@ -37,6 +40,8 @@
     <None Remove="Content\Items\Weapons\Crystalline\PrismPiercer.png" />
     <None Remove="Content\Items\Weapons\Crystalline\PrismPiercer_Projectile.png" />
     <None Remove="Content\Projectiles\Weapons\Accretion_disc.png" />
+    <None Remove="Content\Projectiles\Weapons\HiddenBladeProjectile.png" />
+    <None Remove="Content\Tiles\CrystalliteBarTile.png" />
     <None Remove="Content\Tiles\EvolutionTable\EvolutionTableItem.png" />
     <None Remove="Content\Tiles\EvolutionTable\EvolutionTableS1.png" />
   </ItemGroup>
