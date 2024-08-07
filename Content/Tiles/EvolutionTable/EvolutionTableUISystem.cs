@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Terraria;
+using Terraria.Audio;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.UI;
 using Terraria.ID;
@@ -16,7 +18,7 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
         private UserInterface CustomInterface;
         public Vector2 TilePosition;
         public EvolutionTableS1UI CustomUI;
-        public List<EvoTableRecipe> ValidRecipes = []; // O(1) recipe lookup with hashset of hashset of ingredients?
+        public List<EvoTableRecipe> ValidRecipes = [];
 
         public override void Load()
         {
@@ -39,24 +41,22 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
 
         public void Show()
         {
+            SoundEngine.PlaySound(SoundID.MenuOpen);
             CustomInterface.SetState(CustomUI);
         }
 
         public void Hide()
         {
+            SoundEngine.PlaySound(SoundID.MenuClose);
             CustomInterface.SetState(null);
         }
 
         public void Toggle()
         {
             if (CustomInterface.CurrentState == null)
-            {
-                CustomInterface.SetState(CustomUI);
-            }
+                Show();
             else
-            {
-                CustomInterface.SetState(null);
-            }
+                Hide();
         }
 
         public override void UpdateUI(GameTime gameTime)
@@ -65,7 +65,7 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
             CustomInterface.Update(gameTime);
 
             // Close menu when far away from the evolution table
-            if (Main.LocalPlayer.Distance(TilePosition * 16f) > 200) Hide();
+            if (CustomInterface.CurrentState == CustomUI && Main.LocalPlayer.Distance(TilePosition * 16f) > 200) Hide();
         }
 
         public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
