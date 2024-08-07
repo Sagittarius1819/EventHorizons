@@ -16,7 +16,7 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
         private UserInterface CustomInterface;
         public Vector2 TilePosition;
         public EvolutionTableS1UI CustomUI;
-        public List<CrystalGlockRecipe> ValidRecipes = []; // O(1) recipe lookup with hashset of hashset of ingredients?
+        public List<EvoTableRecipe> ValidRecipes = []; // O(1) recipe lookup with hashset of hashset of ingredients?
 
         public override void Load()
         {
@@ -89,17 +89,17 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
 
         public void RegisterRecipe(Item in1, Item in2, Item in3, Item res)
         {
-            ValidRecipes.Add(new CrystalGlockRecipe(in1, in2, in3, res));
+            ValidRecipes.Add(new EvoTableRecipe(in1, in2, in3, res));
 
         }
     }
 
-    public class CrystalGlockRecipe
+    public class EvoTableRecipe
     {
         public HashSet<(int, int)> Ingredients;
         public Item Result;
 
-        public CrystalGlockRecipe(Item in1, Item in2, Item in3, Item res)
+        public EvoTableRecipe(Item in1, Item in2, Item in3, Item res)
         {
             Ingredients = [(in1.type, in1.stack), (in2.type, in2.stack), (in3.type, in3.stack)];
             Result = res;

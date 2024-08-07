@@ -71,7 +71,7 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
             if (!Slots[4].StoredItem.IsAir) return;
 
             var ingredients = Slots[0..4].Select((s) => s.StoredItem);
-            foreach (CrystalGlockRecipe recipe in ModContent.GetInstance<EvolutionTableUISystem>().ValidRecipes)
+            foreach (EvoTableRecipe recipe in ModContent.GetInstance<EvolutionTableUISystem>().ValidRecipes)
             {
                 if (recipe.CheckForRecipe(ingredients))
                 {

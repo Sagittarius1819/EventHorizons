@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\Assets\Music\Boss\" />
     <Folder Include="Content\Tiles\Natural\" />
   </ItemGroup>
 </Project>

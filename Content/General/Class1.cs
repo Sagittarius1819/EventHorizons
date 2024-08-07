@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace EventHorizons.Content.General
 {
-    internal class Class1 : GlobalNPC
+  /*  internal class Class1 : GlobalNPC
     {
         public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
         {
@@ -67,4 +67,5 @@ namespace EventHorizons.Content.General
 
         public override int Music => MusicLoader.GetMusicSlot(Mod, "Content/Assets/Music/Boss/Wall_Of_Flesh");
     }
+  */
 }
