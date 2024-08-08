@@ -34,8 +34,8 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
                 new Item(ItemID.Handgun),
                 new Item(ModContent.ItemType<CrystallineCore>(), 3),
                 new Item(ModContent.ItemType<CrystalliteBar>(), 3),
-                new Item(ModContent.ItemType<CrystallinePistol>())
-            );
+                new Item(ModContent.ItemType<CrystallinePistol>()
+            ));
 
         }
 
