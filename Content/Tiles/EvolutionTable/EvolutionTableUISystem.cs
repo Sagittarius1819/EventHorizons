@@ -6,10 +6,12 @@ using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.UI;
-using Terraria.ID;
+
 using EventHorizons.Content.Items.Materials;
 using EventHorizons.Content.Items.Placeables.Ores;
 using EventHorizons.Content.Items.Weapons.Ranged.Crystalline;
+using Terraria.ModLoader.IO;
+using System;
 
 namespace EventHorizons.Content.Tiles.EvolutionTable
 {
@@ -34,9 +36,15 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
                 new Item(ItemID.Handgun),
                 new Item(ModContent.ItemType<CrystallineCore>(), 3),
                 new Item(ModContent.ItemType<CrystalliteBar>(), 3),
+                new Item(ModContent.ItemType<CrystallineCore>(), 2),
                 new Item(ModContent.ItemType<CrystallinePistol>()
             ));
 
+        }
+
+        private void RegisterRecipe(Item item1, Item item2, Item item3, Item item4)
+        {
+            throw new NotImplementedException();
         }
 
         public void Show()
@@ -87,9 +95,9 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
             }
         }
 
-        public void RegisterRecipe(Item in1, Item in2, Item in3, Item res)
+        public void RegisterRecipe(Item in1, Item in2, Item in3, Item in4, Item res)
         {
-            ValidRecipes.Add(new EvoTableRecipe(in1, in2, in3, res));
+            ValidRecipes.Add(new EvoTableRecipe(in1, in2, in3, in4, res));
 
         }
     }
@@ -99,9 +107,9 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
         public HashSet<(int, int)> Ingredients;
         public Item Result;
 
-        public EvoTableRecipe(Item in1, Item in2, Item in3, Item res)
+        public EvoTableRecipe(Item in1, Item in2, Item in3, Item in4, Item res)
         {
-            Ingredients = [(in1.type, in1.stack), (in2.type, in2.stack), (in3.type, in3.stack)];
+            Ingredients = [(in1.type, in1.stack), (in2.type, in2.stack), (in3.type, in3.stack), (in4.type, in4.stack)];
             Result = res;
         }
 
