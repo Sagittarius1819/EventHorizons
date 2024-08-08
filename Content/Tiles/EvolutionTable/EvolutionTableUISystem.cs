@@ -1,4 +1,8 @@
-﻿using Microsoft.Xna.Framework;
+﻿using EventHorizons.Content.Items.Materials;
+using EventHorizons.Content.Items.Placeables.Ores;
+using EventHorizons.Content.Items.Weapons.Ranged.Crystalline;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terraria;
@@ -6,12 +10,6 @@ using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.UI;
-
-using EventHorizons.Content.Items.Materials;
-using EventHorizons.Content.Items.Placeables.Ores;
-using EventHorizons.Content.Items.Weapons.Ranged.Crystalline;
-using Terraria.ModLoader.IO;
-using System;
 
 namespace EventHorizons.Content.Tiles.EvolutionTable
 {
@@ -22,6 +20,35 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
         public EvolutionTableS1UI CustomUI;
         public List<EvoTableRecipe> ValidRecipes = [];
 
+        public override void PostSetupContent()
+        {
+            // Example recipe:
+            RegisterRecipe(
+                [
+                    new Item(ModContent.ItemType<CrystallineCore>(), 3),
+                    new Item(ModContent.ItemType<CrystalliteBar>(), 3),
+                    new Item(ItemID.Handgun)
+                ],
+                new Item(ModContent.ItemType<CrystallinePistol>())
+            );
+
+            RegisterRecipe(
+                [
+                    new Item(ItemID.TinOre, 9)
+                ],
+                new Item(ItemID.TinBar, 9)
+            );
+
+            RegisterRecipe(
+                [
+                    new Item(ItemID.TinOre, 2),
+                    new Item(ItemID.TinOre, 3),
+                    new Item(ItemID.TinOre, 5)
+                ],
+                new Item(ItemID.TinBar, 9)
+            );
+        }
+
         public override void Load()
         {
             if (!Main.dedServ)
@@ -30,16 +57,6 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
                 CustomUI.Activate();
                 CustomInterface = new UserInterface();
             }
-
-            // Example recipe:
-            RegisterRecipe(
-                new Item(ItemID.Handgun),
-                new Item(ModContent.ItemType<CrystallineCore>(), 3),
-                new Item(ModContent.ItemType<CrystalliteBar>(), 3),
-                new Item(ModContent.ItemType<CrystallineCore>(), 2),
-                new Item(ModContent.ItemType<CrystallinePistol>()
-            ));
-
         }
 
         private void RegisterRecipe(Item item1, Item item2, Item item3, Item item4)
@@ -95,28 +112,36 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
             }
         }
 
-        public void RegisterRecipe(Item in1, Item in2, Item in3, Item in4, Item res)
+        public void RegisterRecipe(Item[] ingredients, Item res)
         {
-            ValidRecipes.Add(new EvoTableRecipe(in1, in2, in3, in4, res));
-
+            if (ingredients.Length > 4) EventHorizons.Instance.Logger.Error("Error registering Evolution Table recipe: the number of ingredients must not exceed 4 item stacks.");
+            ValidRecipes.Add(new EvoTableRecipe(ingredients, res));
         }
     }
 
     public class EvoTableRecipe
     {
-        public HashSet<(int, int)> Ingredients;
+        public List<(int, int)> Ingredients;
         public Item Result;
 
-        public EvoTableRecipe(Item in1, Item in2, Item in3, Item in4, Item res)
+        public EvoTableRecipe(Item[] ingredients, Item res)
         {
-            Ingredients = [(in1.type, in1.stack), (in2.type, in2.stack), (in3.type, in3.stack), (in4.type, in4.stack)];
+            Ingredients = ingredients.Select((i) => (i.type, i.stack)).ToList();
             Result = res;
         }
 
         public bool CheckForRecipe(IEnumerable<Item> ingredients)
         {
-            HashSet<(int, int)> ing = ingredients.Select((i) => (i.type, i.stack)).ToHashSet();
-            return Ingredients.SetEquals(ing);
+            // Don't craft if more ingredients are given than the recipe needs
+            if (ingredients.Count() > Ingredients.Count) return false;
+
+            var temp = Ingredients.OrderBy((i) => i.Item2).ToList();
+            foreach (Item ing in ingredients.OrderBy((i) => i.stack))
+            {
+                var match = temp.Where((i) => ing.type == i.Item1 && ing.stack >= i.Item2);
+                if (match.Any()) temp.Remove(match.First());
+            }
+            return temp.Count == 0;
         }
     }
 }

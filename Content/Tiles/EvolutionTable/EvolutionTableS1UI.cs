@@ -7,7 +7,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.UI;
 using Terraria.UI;
-using EventHorizons.Content.Tiles.EvolutionTable;
 
 namespace EventHorizons.Content.Tiles.EvolutionTable
 {
@@ -70,13 +69,18 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
 
         private void TryCraft(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (!Slots[4].StoredItem.IsAir) return;
-
-            var ingredients = Slots[0..4].Select((s) => s.StoredItem);
+            var ingredients = Slots[0..4].Where((s) => !s.StoredItem.IsAir).Select((s) => s.StoredItem);
             foreach (EvoTableRecipe recipe in ModContent.GetInstance<EvolutionTableUISystem>().ValidRecipes)
             {
                 if (recipe.CheckForRecipe(ingredients))
                 {
+                    // Allow crafting if result slot is empty or the results of this recipe can be stacked onto it
+                    if (!Slots[4].StoredItem.IsAir &&
+                        (Slots[4].StoredItem.type != recipe.Result.type || Slots[4].StoredItem.stack + recipe.Result.stack > recipe.Result.maxStack))
+                    {
+                        return;
+                    }
+
                     Craft(recipe);
                     return;
                 }
@@ -87,8 +91,20 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
         private void Craft(EvoTableRecipe recipe)
         {
             SoundEngine.PlaySound(SoundID.Item176 with { Pitch = -0.2f });
-            foreach (EnhancedItemSlotV2 slot in Slots) slot.StoredItem.TurnToAir();
-            Slots[4].SetBoundItem(recipe.Result.Clone());
+
+            var temp = recipe.Ingredients.OrderBy((i) => i.Item2).ToList();
+            foreach (EnhancedItemSlotV2 slot in Slots[0..4].OrderBy((i) => i.StoredItem.stack))
+            {
+                if (slot.StoredItem.IsAir) continue;
+                var ingredient = temp.Where((i) => slot.StoredItem.type == i.Item1 && slot.StoredItem.stack >= i.Item2).First();
+                int ingredientStack = ingredient.Item2;
+                slot.StoredItem.stack -= ingredientStack;
+                if (slot.StoredItem.stack == 0) slot.StoredItem.TurnToAir();
+                temp.Remove(ingredient);
+            }
+
+            if (Slots[4].StoredItem.IsAir) Slots[4].SetBoundItem(recipe.Result.Clone());
+            else Slots[4].StoredItem.stack += recipe.Result.stack;
         }
     }
 }
