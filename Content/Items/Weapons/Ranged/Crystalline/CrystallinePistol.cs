@@ -25,8 +25,8 @@ namespace EventHorizons.Content.Items.Weapons.Ranged.Crystalline
         public override void SetDefaults()
         {
             Item.damage = 30;
-            Item.width = 40;
-            Item.height = 33;
+            Item.width = 20;
+            Item.height = 17;
             Item.useTime = 20;
             Item.useAnimation = 20;
             Item.useStyle = ItemUseStyleID.Shoot;
@@ -54,7 +54,7 @@ namespace EventHorizons.Content.Items.Weapons.Ranged.Crystalline
             return false;
         }
 
-        public override void AddRecipes() => CreateRecipe().AddIngredient<CrystallineStone>(30).AddIngredient<Crystallite>(25).AddIngredient(ItemID.Handgun).AddTile(TileID.Anvils).Register();
+    
     }
 
     public class CrystallinePistolHoldout : ModProjectile

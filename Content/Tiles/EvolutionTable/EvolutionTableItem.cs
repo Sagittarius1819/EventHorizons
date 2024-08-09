@@ -1,4 +1,5 @@
-﻿using Terraria.ID;
+﻿using EventHorizons.Content.Projectiles;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace EventHorizons.Content.Tiles.EvolutionTable
@@ -27,7 +28,15 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ItemID.DirtBlock, 10)
+                .AddIngredient(ItemID.IronBar, 25)
+                .AddIngredient(ItemID.Diamond, 2)
+                .AddIngredient(ItemID.BlueTorch, 2)
+                .AddTile(TileID.WorkBenches)
+                .Register();
+            CreateRecipe()
+                .AddIngredient(ItemID.LeadBar, 25)
+                .AddIngredient(ItemID.Diamond, 2)
+                .AddIngredient(ItemID.BlueTorch, 2)
                 .AddTile(TileID.WorkBenches)
                 .Register();
         }

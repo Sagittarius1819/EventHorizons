@@ -40,13 +40,30 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
             );
 
             RegisterRecipe(
-                [
-                    new Item(ItemID.TinOre, 2),
+                 [
+                     new Item(ItemID.TinOre, 2),
                     new Item(ItemID.TinOre, 3),
                     new Item(ItemID.TinOre, 5)
-                ],
-                new Item(ItemID.TinBar, 9)
-            );
+                 ],
+                 new Item(ItemID.TinBar, 9)
+             );
+            RegisterRecipe(
+        [
+            new Item(ItemID.TinOre, 2),
+                    new Item(ItemID.TinOre, 3),
+                    new Item(ItemID.TinOre, 5)
+        ],
+        new Item(ItemID.TinBar, 9)
+    );
+
+            RegisterRecipe(
+    [
+        new Item(ItemID.TinOre, 2),
+                    new Item(ItemID.TinOre, 3),
+                    new Item(ItemID.TinOre, 5)
+    ],
+    new Item(ItemID.TinBar, 9)
+);
         }
 
         public override void Load()
