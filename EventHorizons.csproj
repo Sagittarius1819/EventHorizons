@@ -27,6 +27,8 @@
     <None Remove="Content\Assets\Textures\Misc\GlowBallLarge.png" />
     <None Remove="Content\Assets\Textures\Misc\MuzzleFlash.png" />
     <None Remove="Backgrounds\Blackholesky.png" />
+    <None Remove="Content\Dusts\CrystalDust.png" />
+    <None Remove="Content\Dusts\CrystalStoneDust.png" />
     <None Remove="Content\Items\Materials\CrystallineCore.png" />
     <None Remove="Content\Items\Placeables\Ores\CrystalliteBar.png" />
     <None Remove="Content\Items\Weapons\Melee\HiddenShortsword\HiddenShortsword.png" />
@@ -45,6 +47,9 @@
     <None Remove="Content\Tiles\CrystalliteBarTile.png" />
     <None Remove="Content\Tiles\EvolutionTable\EvolutionTableItem.png" />
     <None Remove="Content\Tiles\EvolutionTable\EvolutionTableS1.png" />
+    <None Remove="Content\Tiles\Rubbles\Crystal1x1.png" />
+    <None Remove="Content\Tiles\Rubbles\Crystaltallceiling.png" />
+    <None Remove="Content\Tiles\Rubbles\Crystaltallground.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SerousCommonLib">
