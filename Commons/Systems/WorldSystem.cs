@@ -13,6 +13,7 @@ namespace TutorialMod.Common.Systems
             if (shiniesIndex != -1)
             {
                 tasks.Insert(shiniesIndex + 1, new GalvaniteoreGenPass("Galvanite Ore Pass", 320f));
+                tasks.Insert(shiniesIndex + 2, new CrystallineCavernsGenPass("Creating Crystalline Caverns", 100f));
             }
         }
     }
