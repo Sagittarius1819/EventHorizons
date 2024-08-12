@@ -188,23 +188,66 @@ namespace EventHorizons.Content.NPCs.Town
         {
             WeightedRandom<string> chat = new WeightedRandom<string>();
 
-            int dryad = NPC.FindFirstNPC(NPCID.Dryad);
-            if (dryad >= 0 && Main.rand.NextBool(4))
+            int guide = NPC.FindFirstNPC(NPCID.Guide);
+            if (guide >= 0 && Main.rand.NextBool(4))
             {
-                chat.Add(Language.GetTextValue("That Dryad woman seems to know a lot about nature.", Main.npc[dryad].GivenName));
+                chat.Add(Language.GetTextValue("The guide.. He's amazing...A mind greater than mine... And somehow, still alive!", Main.npc[guide].GivenName));
             }
-            chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExamplePerson.StandardDialogue1"));
+            int Merchant = NPC.FindFirstNPC(NPCID.Merchant);
+            if (Merchant >= 0 && Main.rand.NextBool(4))
+            {
+                chat.Add(Language.GetTextValue("The merchant. That's what we would call in my days a scam...but i need myself some stuff so it's the only reliable man here.", Main.npc[Merchant].GivenName));
+            }
+            int Demo = NPC.FindFirstNPC(NPCID.Demolitionist);
+            if (Demo >= 0 && Main.rand.NextBool(4))
+            {
+                chat.Add(Language.GetTextValue("Can you ask my neighbor to stop blowing firecrackers at night? It disturbs my sleep", Main.npc[Demo].GivenName));
+            }
+            int Nurse = NPC.FindFirstNPC(NPCID.Nurse);
+            if (Nurse >= 0 && Main.rand.NextBool(4))
+            {
+                chat.Add(Language.GetTextValue("Finally! A way to treat arthritis! What? What do you mean she can't heal it?-", Main.npc[Nurse].GivenName));
+            }
+            int Golf = NPC.FindFirstNPC(NPCID.Golfer);
+            if (Golf >= 0 && Main.rand.NextBool(4))
+            {
+                chat.Add(Language.GetTextValue("The Golfer sure knows how to enjoy life...I wish I wasn't so fixated on my work, so I could play with him.", Main.npc[Golf].GivenName));
+            }
+            int Dye = NPC.FindFirstNPC(NPCID.DyeTrader);
+            if (Dye >= 0 && Main.rand.NextBool(4))
+            {
+                chat.Add(Language.GetTextValue("That's an...original man right there, not everyone can extract the natural colors of the plant and sell them in bottles like this! I really hope i get orange...", Main.npc[Dye].GivenName));
+            }
+            int Chippy = NPC.FindFirstNPC(NPCID.Clothier);
+            if (Chippy >= 0 && Main.rand.NextBool(4))
+            {
+                chat.Add(Language.GetTextValue("I knew I recognized that face! He seems old still but he's just as fixated to clothes as i am for evolution and papers!", Main.npc[Chippy].GivenName));
+            }
+            int fish = NPC.FindFirstNPC(NPCID.Angler);
+            if (fish >= 0 && Main.rand.NextBool(4))
+            {
+                chat.Add(Language.GetTextValue("Such a short Fisherman.. Rude, annoying and pretentious...this new generation is doomed!", Main.npc[fish].GivenName));
+            }
+            int EOC = NPC.FindFirstNPC(NPCID.EyeofCthulhu);
+            if (EOC >= 0 && Main.rand.NextBool(4))
+            {
+                chat.Add(Language.GetTextValue("I'M FEELING WATCHED UNRESPECTFULLY", Main.npc[EOC].GivenName));
+            }
+            chat.Add(Language.GetTextValue("Have you read the pages of my work? I'm actually surprised! Kids these days just look everything online...in a wiki"));
+            chat.Add(Language.GetTextValue("The scraps of my work are what i define as...extensive...do you have a degree to read them?"));
+            chat.Add(Language.GetTextValue("Back in my days the only weapons you needed were muskets and cannons...maybe it's a good thing we got weapons that don't risk to kill you on the spot"));
+            chat.Add(Language.GetTextValue("Don't you like the fresh wind? I know I don't like it at all, my old bones trembles in winter"));
             chat.Add(Language.GetTextValue("I've heard once that penguins hate me... it's their fault if they can't hold screwdrivers"));
             chat.Add(Language.GetTextValue("Trust me, don't flash a giraffe with a phone..."));
             chat.Add(Language.GetTextValue("Snakes are either stupid for losing their legs or knew what they were doing thinking about the tattoos they'll be on"));
-            chat.Add(Language.GetTextValue("A scientific man ought to have no wishes, no affections a mere heart of stone."), 5.0);
-            chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExamplePerson.RareDialogue"), 0.1);
+            chat.Add(Language.GetTextValue("A scientific man ought to have no wishes, no affections, a mere heart of stone."), 4.0);
+            chat.Add(Language.GetTextValue("I got a glock in my rari"), 0.01); //<-- really frickin rare
 
             NumberOfTimesTalkedTo++;
             if (NumberOfTimesTalkedTo >= 10)
             {
                 //This counter is linked to a single instance of the NPC, so if ExamplePerson is killed, the counter will reset.
-                chat.Add(Language.GetTextValue("Mods.ExampleMod.Dialogue.ExamplePerson.TalkALot"));
+                chat.Add(Language.GetTextValue("Listen, Thanks for the chat, Ive got to go now."));
             }
 
             string chosenChat = chat; // chat is implicitly cast to a string. This is where the random choice is made.
