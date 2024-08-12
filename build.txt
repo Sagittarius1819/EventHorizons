@@ -2,3 +2,4 @@ displayName = Event Horizons: A Terraria Mod
 author = ORION And The Team
 version = 0.1
 modReferences = SerousCommonLib
+buildIgnore = ., bin/*, obj/*, Thumbs.db, lib/*
