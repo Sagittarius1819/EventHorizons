@@ -31,39 +31,6 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
                 ],
                 new Item(ModContent.ItemType<CrystallinePistol>())
             );
-
-            RegisterRecipe(
-                [
-                    new Item(ItemID.TinOre, 9)
-                ],
-                new Item(ItemID.TinBar, 9)
-            );
-
-            RegisterRecipe(
-                 [
-                     new Item(ItemID.TinOre, 2),
-                    new Item(ItemID.TinOre, 3),
-                    new Item(ItemID.TinOre, 5)
-                 ],
-                 new Item(ItemID.TinBar, 9)
-             );
-            RegisterRecipe(
-        [
-            new Item(ItemID.TinOre, 2),
-                    new Item(ItemID.TinOre, 3),
-                    new Item(ItemID.TinOre, 5)
-        ],
-        new Item(ItemID.TinBar, 9)
-    );
-
-            RegisterRecipe(
-    [
-        new Item(ItemID.TinOre, 2),
-                    new Item(ItemID.TinOre, 3),
-                    new Item(ItemID.TinOre, 5)
-    ],
-    new Item(ItemID.TinBar, 9)
-);
         }
 
         public override void Load()
@@ -74,11 +41,6 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
                 CustomUI.Activate();
                 CustomInterface = new UserInterface();
             }
-        }
-
-        private void RegisterRecipe(Item item1, Item item2, Item item3, Item item4)
-        {
-            throw new NotImplementedException();
         }
 
         public void Show()

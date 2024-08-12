@@ -1,11 +1,14 @@
 ﻿using EventHorizons.Content.Items.Materials;
+using EventHorizons.Content.Items.Placeables.Ores;
+using EventHorizons.Content.Items.Weapons.Ammo;
+using EventHorizons.Content.Items.Weapons.Ranged.Crystalline;
+using EventHorizons.Content.Projectiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terraria;
-using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
@@ -16,23 +19,15 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.Utilities;
-using EventHorizons.Content.Tiles.EvolutionTable;
-using static Terraria.GameContent.Bestiary.IL_BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions;
-using EventHorizons.Content.Projectiles;
-using EventHorizons.Content.Items.Weapons.Ammo;
-using EventHorizons.Content.Items.Placeables.Ores;
-using EventHorizons.Content.Items.Weapons.Ranged.Crystalline;
 
-namespace ExampleMod.Content.NPCs
+namespace EventHorizons.Content.NPCs.Town
 {
-    [AutoloadHead]
     public class DarwinNPC : ModNPC
     {
         public const string ShopName = "Evolution Store";
         public int NumberOfTimesTalkedTo = 0;
 
         private static Profiles.StackedNPCProfile NPCProfile;
-
 
         public override void SetStaticDefaults()
         {
@@ -52,8 +47,7 @@ namespace ExampleMod.Content.NPCs
             NPCID.Sets.FaceEmote[Type] = EmoteID.EmoteLaugh;
 
             // Influences how the NPC looks in the Bestiary
-            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers()
-            {
+            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers() {
                 Velocity = 1f, // Draws the NPC in the bestiary as if its walking +1 tiles in the x direction
                 Direction = 1 // -1 is left and 1 is right. NPCs are drawn facing the left by default but ExamplePerson will be drawn facing the right
                               // Rotation = MathHelper.ToRadians(180) // You can also change the rotation of an NPC. Rotation is measured in radians
@@ -66,8 +60,8 @@ namespace ExampleMod.Content.NPCs
             // NOTE: The following code uses chaining - a style that works due to the fact that the SetXAffection methods return the same NPCHappiness instance they're called on.
             NPC.Happiness
                 .SetBiomeAffection<ForestBiome>(AffectionLevel.Like)
-                .SetBiomeAffection<SnowBiome>(AffectionLevel.Dislike) 
-                .SetBiomeAffection<HallowBiome>(AffectionLevel.Hate) 
+                .SetBiomeAffection<SnowBiome>(AffectionLevel.Dislike)
+                .SetBiomeAffection<HallowBiome>(AffectionLevel.Hate)
                 .SetBiomeAffection<OceanBiome>(AffectionLevel.Love)
                 .SetBiomeAffection<JungleBiome>(AffectionLevel.Love)
                 .SetNPCAffection(NPCID.Dryad, AffectionLevel.Love) // Loves living near the dryad.
@@ -102,8 +96,8 @@ namespace ExampleMod.Content.NPCs
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
-				new FlavorTextBestiaryInfoElement("The great mind of the World we live in, he believes everything evolved from something...but his studies also found out...that non living things evolve"),
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+                new FlavorTextBestiaryInfoElement("The great mind of the World we live in, he believes everything evolved from something...but his studies also found out...that non living things evolve"),
             });
         }
 
@@ -248,9 +242,9 @@ namespace ExampleMod.Content.NPCs
             npcLoot.Add(ItemDropRule.Common(ItemID.Book));
         }
 
-        
 
-       
+
+
         public override void OnGoToStatue(bool toKingStatue)
         {
             if (Main.netMode == NetmodeID.Server)

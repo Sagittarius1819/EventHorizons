@@ -97,9 +97,11 @@ namespace EventHorizons.Content.Tiles.EvolutionTable
             {
                 if (slot.StoredItem.IsAir) continue;
                 var ingredient = temp.Where((i) => slot.StoredItem.type == i.Item1 && slot.StoredItem.stack >= i.Item2).First();
+
                 int ingredientStack = ingredient.Item2;
                 slot.StoredItem.stack -= ingredientStack;
                 if (slot.StoredItem.stack == 0) slot.StoredItem.TurnToAir();
+
                 temp.Remove(ingredient);
             }
 
