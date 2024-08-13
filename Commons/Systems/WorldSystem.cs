@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Input;
 using Terraria.ID;
 using EventHorizons.Content.Tiles;
 using Steamworks;
+using FullSerializer.Internal;
 
 namespace TutorialMod.Common.Systems
 {
@@ -26,11 +27,27 @@ namespace TutorialMod.Common.Systems
 			Dust.QuickBox(new Vector2(x, y) * 16, new Vector2(x + 1, y + 1) * 16, 2, Color.YellowGreen, null);
 
             // Code to test placed here:
-            GenerateCrystallineCave(x, y);
+             GenerateSpike(x, y, 20, -2f, ModContent.TileType<some_crystal_block_spritesheet>());
 
             //Tunnel placed in middle
+             
 
+        }
 
+        private void GenerateSpike(int x, int y, int length, float slope, int type)
+        {
+            if (length > 0 && slope > 0) {
+                for (int i = 0; i < length; i++)
+                {
+                    for (int j = 0; j < i * slope; j++)
+                    {
+                        WorldGen.KillTile(i + x, y + j + i);
+                        WorldGen.PlaceTile(i + x, y + j + i, type);
+                    }
+                }
+            } 
+
+           
         }
 
         private void GenerateCrystallineCave(int x, int y)
