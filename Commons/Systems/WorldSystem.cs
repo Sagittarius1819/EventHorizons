@@ -26,14 +26,24 @@ namespace TutorialMod.Common.Systems
 			Dust.QuickBox(new Vector2(x, y) * 16, new Vector2(x + 1, y + 1) * 16, 2, Color.YellowGreen, null);
 
             // Code to test placed here:
-            CreateCentralOval(x, y, 100, 30, 2);
+            GenerateCrystallineCave(x, y);
+
+            //Tunnel placed in middle
 
 
         }
 
-        private void CreateCentralOval(int x, int y, int height, int width, int slope)
+        private void GenerateCrystallineCave(int x, int y)
         {
-            //Method Not fully working
+            CreateCrystallineStone(x, y, 100, 65, 2);
+            CreateCrystallineStone(x + 20, y + 5, 100, 65, 2);
+            WorldGen.digTunnel(x + 20 + WorldGen.genRand.Next(30, 35), y + 5 + WorldGen.genRand.Next(40, 60), 0, 0, 1, 30);
+            WorldGen.digTunnel(x + WorldGen.genRand.Next(30, 35), y + WorldGen.genRand.Next(40, 60), 0, 0, 1, 30);
+        }
+
+        private void CreateCrystallineStone(int x, int y, int height, int width, int slope)
+        {
+            //There isn't a nice way to put this; this method is shit
             int center = x + width / 2;
             for (int i = 0; i < width; i += slope) {
                 for (int j = 0; j < i; j++)
@@ -50,12 +60,12 @@ namespace TutorialMod.Common.Systems
                 
             }
 
-            for (int i = width; i < height - width; i++)
+            for (int i = width; i < height - width + 2; i++)
             {
-                for (int j = 0; j < width; j++)
+                for (int j = 1; j < width * 2; j++)
                 {
-                    WorldGen.KillTile(x + j, y + i);
-                    WorldGen.PlaceTile(x + j, y + i, ModContent.TileType<CrystallineStoneTile>());
+                    WorldGen.KillTile(x - (width / 2) + j, y + i);
+                    WorldGen.PlaceTile(x - (width / 2) + j, y + i, ModContent.TileType<CrystallineStoneTile>());
                 }
             }
 

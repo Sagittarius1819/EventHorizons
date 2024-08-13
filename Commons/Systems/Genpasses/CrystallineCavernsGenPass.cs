@@ -22,15 +22,69 @@ namespace EventHorizons.Commons.Systems.Genpasses
         {
 			progress.Message = "Creating Crystalline Caverns";
 
-			for (int k = 0; k < (int)((Main.maxTilesX * Main.maxTilesY) * 6E-05); k++) {
+			for (int k = 0; k < (int)((Main.maxTilesX * Main.maxTilesY) * 10E-07); k++) {
 				int x = WorldGen.genRand.Next(0, Main.maxTilesX);
-				int y = WorldGen.genRand.Next((int)GenVars.worldSurfaceLow, Main.maxTilesY);
+				int y = WorldGen.genRand.Next((int)GenVars.worldSurfaceLow + 300, Main.maxTilesY);
 
-				//WorldGen.digTunnel(x, y, 0, 0, 1, 75, false);
-                //WorldGen.TileRunner(x, y, WorldGen.genRand.Next(80, 100), WorldGen.genRand.Next(2, 6), ModContent.TileType<CrystallineStoneTile>());
+                GenerateCrystallineCave(x, y);
 
-                //Code above is broken for now. The tunnel does not generate inside the new stone tiles. It also needs to be made way less common, but this is ok for testing
-			}
+            }
+        }
+
+        private void GenerateCrystallineCave(int x, int y)
+        {
+            CreateCrystallineStone(x, y, 100, 65, 2);
+            CreateCrystallineStone(x + 20, y + 5, 100, 65, 2);
+            WorldGen.digTunnel(x + 20 + WorldGen.genRand.Next(30, 35), y + 5 + WorldGen.genRand.Next(40, 60), 0, 0, 1, 30);
+            WorldGen.digTunnel(x + WorldGen.genRand.Next(30, 35), y + WorldGen.genRand.Next(40, 60), 0, 0, 1, 30);
+        }
+
+        private void CreateCrystallineStone(int x, int y, int height, int width, int slope)
+        {
+            //There isn't a nice way to put this; this method is shit
+            int center = x + width / 2;
+            for (int i = 0; i < width; i += slope)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    for (int k = 0; k < slope; k++)
+                    {
+                        WorldGen.KillTile(center + j, y + i + k);
+                        WorldGen.KillTile(center - j, y + i + k);
+                        WorldGen.PlaceTile(center + j, y + i + k, ModContent.TileType<CrystallineStoneTile>());
+                        WorldGen.PlaceTile(center - j, y + i + k, ModContent.TileType<CrystallineStoneTile>());
+                    }
+
+                }
+
+            }
+
+            for (int i = width; i < height - width + 2; i++)
+            {
+                for (int j = 1; j < width * 2; j++)
+                {
+                    WorldGen.KillTile(x - (width / 2) + j, y + i);
+                    WorldGen.PlaceTile(x - (width / 2) + j, y + i, ModContent.TileType<CrystallineStoneTile>());
+                }
+            }
+
+            for (int i = 0; i < width; i += slope)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    for (int k = 0; k < slope; k++)
+                    {
+                        WorldGen.KillTile(center + j, y + height - i + k);
+                        WorldGen.KillTile(center - j, y + height - i + k);
+                        WorldGen.PlaceTile(center + j, y + height - i + k, ModContent.TileType<CrystallineStoneTile>());
+                        WorldGen.PlaceTile(center - j, y + height - i + k, ModContent.TileType<CrystallineStoneTile>());
+                    }
+
+                }
+
+            }
         }
     }
+
+
 }
