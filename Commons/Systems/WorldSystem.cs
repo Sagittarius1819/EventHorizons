@@ -27,7 +27,7 @@ namespace TutorialMod.Common.Systems
 			Dust.QuickBox(new Vector2(x, y) * 16, new Vector2(x + 1, y + 1) * 16, 2, Color.YellowGreen, null);
 
             // Code to test placed here:
-            GenerateCrystallineCave(x, y);
+            //GenerateCrystallineCave(x, y);
 
             //Tunnel placed in middle
 
@@ -38,15 +38,23 @@ namespace TutorialMod.Common.Systems
         {
             CreateCrystallineStone(x, y, 100, 65, 2);
             CreateCrystallineStone(x + 20, y + 5, 100, 65, 2);
-            WorldGen.digTunnel(x + 20 + WorldGen.genRand.Next(30, 35), y + 5 + WorldGen.genRand.Next(40, 60), 0, 0, 1, 30);
-            WorldGen.digTunnel(x + WorldGen.genRand.Next(30, 35), y + WorldGen.genRand.Next(40, 60), 0, 0, 1, 30);
-            GenerateSpike(x + 20, y + 25, WorldGen.genRand.Next(10, 15), WorldGen.genRand.Next(-2, -1), ModContent.TileType<some_crystal_block_spritesheet>());
-            GenerateSpike(x + 40, y + 60, WorldGen.genRand.Next(10, 15), WorldGen.genRand.Next(1, 2), ModContent.TileType<some_crystal_block_spritesheet>());
-
-
-            //GenerateSpike(x + 45, y - 45, WorldGen.genRand.Next(10, 30), WorldGen.genRand.Next(2, 4), ModContent.TileType<CrystallineStoneTile>());
-            //GenerateSpike(x, y - 45, WorldGen.genRand.Next(10, 30), WorldGen.genRand.Next(2, 4), ModContent.TileType<CrystallineStoneTile>());
-            //GenerateSpike(x - 45, y - 45, WorldGen.genRand.Next(10, 30), WorldGen.genRand.Next(2, 4), ModContent.TileType<CrystallineStoneTile>());
+            WorldGen.digTunnel(x + + 50, y + 55, 0, 0, 1, 30);
+            WorldGen.digTunnel(x + 30, y + 50, 0, 0, 1, 30);
+            int topSpikeSize = WorldGen.genRand.Next(-2, 0);
+            if (topSpikeSize == -1)
+            {
+                GenerateSpike(x + 20, y + 17, WorldGen.genRand.Next(10, 15), topSpikeSize, ModContent.TileType<some_crystal_block_spritesheet>());
+            } else
+            {
+                GenerateSpike(x + 20, y + 25, WorldGen.genRand.Next(10, 15), topSpikeSize, ModContent.TileType<some_crystal_block_spritesheet>());
+            }
+            GenerateSpike(x + 45, y + 50, WorldGen.genRand.Next(20, 25), (float)WorldGen.genRand.NextDouble(), ModContent.TileType<some_crystal_block_spritesheet>());
+            if (WorldGen.genRand.NextBool())
+            {
+                GenerateSpike(x + 30, y + 65, 20, .25f, ModContent.TileType<some_crystal_block_spritesheet>());
+            }
+            GenerateSpike(x + 30, y, WorldGen.genRand.Next(15, 20), WorldGen.genRand.Next(-4, 0), ModContent.TileType<CrystallineStoneTile>());
+            GenerateSpike(x + 20, y + 80, WorldGen.genRand.Next(15, 20), WorldGen.genRand.Next(2, 5), ModContent.TileType<CrystallineStoneTile>());
         }
 
         private void GenerateSpike(int x, int y, int length, float slope, int type)
