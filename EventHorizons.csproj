@@ -12,6 +12,20 @@
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <AdditionalFiles Remove="Commons\Systems\NewFolder1\**" />
+    <AdditionalFiles Remove="Commons\Systems\NewFolder\**" />
+    <AdditionalFiles Remove="Content\NewFolder1\**" />
+    <Compile Remove="Commons\Systems\NewFolder1\**" />
+    <Compile Remove="Commons\Systems\NewFolder\**" />
+    <Compile Remove="Content\NewFolder1\**" />
+    <EmbeddedResource Remove="Commons\Systems\NewFolder1\**" />
+    <EmbeddedResource Remove="Commons\Systems\NewFolder\**" />
+    <EmbeddedResource Remove="Content\NewFolder1\**" />
+    <None Remove="Commons\Systems\NewFolder1\**" />
+    <None Remove="Commons\Systems\NewFolder\**" />
+    <None Remove="Content\NewFolder1\**" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Remove="Commons\Systems\WorldGen.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +72,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Assets\Music\Boss\" />
+    <Folder Include="Content\Structures\CrystallineStoneSpikes\Large\" />
+    <Folder Include="Content\Structures\CrystallineStoneSpikes\Medium\" />
+    <Folder Include="Content\Structures\CrystallineStoneSpikes\Small\" />
+    <Folder Include="Content\Structures\Crystals\Down\" />
     <Folder Include="Content\Tiles\Natural\" />
   </ItemGroup>
 </Project>
