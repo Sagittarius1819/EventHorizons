@@ -27,27 +27,11 @@ namespace TutorialMod.Common.Systems
 			Dust.QuickBox(new Vector2(x, y) * 16, new Vector2(x + 1, y + 1) * 16, 2, Color.YellowGreen, null);
 
             // Code to test placed here:
-             GenerateSpike(x, y, 20, -2f, ModContent.TileType<some_crystal_block_spritesheet>());
+            GenerateCrystallineCave(x, y);
 
             //Tunnel placed in middle
-             
 
-        }
 
-        private void GenerateSpike(int x, int y, int length, float slope, int type)
-        {
-            if (length > 0 && slope > 0) {
-                for (int i = 0; i < length; i++)
-                {
-                    for (int j = 0; j < i * slope; j++)
-                    {
-                        WorldGen.KillTile(i + x, y + j + i);
-                        WorldGen.PlaceTile(i + x, y + j + i, type);
-                    }
-                }
-            } 
-
-           
         }
 
         private void GenerateCrystallineCave(int x, int y)
@@ -56,13 +40,49 @@ namespace TutorialMod.Common.Systems
             CreateCrystallineStone(x + 20, y + 5, 100, 65, 2);
             WorldGen.digTunnel(x + 20 + WorldGen.genRand.Next(30, 35), y + 5 + WorldGen.genRand.Next(40, 60), 0, 0, 1, 30);
             WorldGen.digTunnel(x + WorldGen.genRand.Next(30, 35), y + WorldGen.genRand.Next(40, 60), 0, 0, 1, 30);
+            GenerateSpike(x + 20, y + 25, WorldGen.genRand.Next(10, 15), WorldGen.genRand.Next(-2, -1), ModContent.TileType<some_crystal_block_spritesheet>());
+            GenerateSpike(x + 40, y + 60, WorldGen.genRand.Next(10, 15), WorldGen.genRand.Next(1, 2), ModContent.TileType<some_crystal_block_spritesheet>());
+
+
+            //GenerateSpike(x + 45, y - 45, WorldGen.genRand.Next(10, 30), WorldGen.genRand.Next(2, 4), ModContent.TileType<CrystallineStoneTile>());
+            //GenerateSpike(x, y - 45, WorldGen.genRand.Next(10, 30), WorldGen.genRand.Next(2, 4), ModContent.TileType<CrystallineStoneTile>());
+            //GenerateSpike(x - 45, y - 45, WorldGen.genRand.Next(10, 30), WorldGen.genRand.Next(2, 4), ModContent.TileType<CrystallineStoneTile>());
+        }
+
+        private void GenerateSpike(int x, int y, int length, float slope, int type)
+        {
+            if (length > 0 && slope > 0)
+            {
+                for (int i = 0; i < length; i++)
+                {
+                    for (int j = 0; j < i * slope; j++)
+                    {
+                        WorldGen.KillTile(i + x, y + j + i);
+                        WorldGen.PlaceTile(i + x, y + j + i, type);
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < length; i++)
+                {
+                    for (int j = 0; j < i * -slope; j++)
+                    {
+                        WorldGen.KillTile(i + x, y - j + i);
+                        WorldGen.PlaceTile(i + x, y - j + i, type);
+                    }
+                }
+            }
+
+
         }
 
         private void CreateCrystallineStone(int x, int y, int height, int width, int slope)
         {
             //There isn't a nice way to put this; this method is shit
             int center = x + width / 2;
-            for (int i = 0; i < width; i += slope) {
+            for (int i = 0; i < width; i += slope)
+            {
                 for (int j = 0; j < i; j++)
                 {
                     for (int k = 0; k < slope; k++)
@@ -72,9 +92,9 @@ namespace TutorialMod.Common.Systems
                         WorldGen.PlaceTile(center + j, y + i + k, ModContent.TileType<CrystallineStoneTile>());
                         WorldGen.PlaceTile(center - j, y + i + k, ModContent.TileType<CrystallineStoneTile>());
                     }
-                    
+
                 }
-                
+
             }
 
             for (int i = width; i < height - width + 2; i++)
@@ -102,6 +122,8 @@ namespace TutorialMod.Common.Systems
 
             }
         }
+
+        
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
         {
 

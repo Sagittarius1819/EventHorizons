@@ -26,7 +26,7 @@ namespace EventHorizons.Commons.Systems.Genpasses
 				int x = WorldGen.genRand.Next(0, Main.maxTilesX);
 				int y = WorldGen.genRand.Next((int)GenVars.worldSurfaceLow + 300, Main.maxTilesY);
 
-                
+                GenerateCrystallineCave(x, y);
 
             }
         }
@@ -37,21 +37,40 @@ namespace EventHorizons.Commons.Systems.Genpasses
             CreateCrystallineStone(x + 20, y + 5, 100, 65, 2);
             WorldGen.digTunnel(x + 20 + WorldGen.genRand.Next(30, 35), y + 5 + WorldGen.genRand.Next(40, 60), 0, 0, 1, 30);
             WorldGen.digTunnel(x + WorldGen.genRand.Next(30, 35), y + WorldGen.genRand.Next(40, 60), 0, 0, 1, 30);
+            GenerateSpike(x, y, WorldGen.genRand.Next(10, 30), WorldGen.genRand.Next(-4, -2), ModContent.TileType<CrystallineStoneTile>());
+            GenerateSpike(x - 45, y - 100, WorldGen.genRand.Next(10, 30), WorldGen.genRand.Next(-4, 2), ModContent.TileType<CrystallineStoneTile>());
+
+            //GenerateSpike(x + 45, y - 45, WorldGen.genRand.Next(10, 30), WorldGen.genRand.Next(2, 4), ModContent.TileType<CrystallineStoneTile>());
+            //GenerateSpike(x, y - 45, WorldGen.genRand.Next(10, 30), WorldGen.genRand.Next(2, 4), ModContent.TileType<CrystallineStoneTile>());
+            //GenerateSpike(x - 45, y - 45, WorldGen.genRand.Next(10, 30), WorldGen.genRand.Next(2, 4), ModContent.TileType<CrystallineStoneTile>());
         }
 
-        private void GenerateSpike(int x, int y, int length, int height, int type)
+        private void GenerateSpike(int x, int y, int length, float slope, int type)
         {
-            for (int i = 0; i < height; i++)
+            if (length > 0 && slope > 0)
             {
-                for (int j = 0; j < length; j++)
+                for (int i = 0; i < length; i++)
                 {
-                    if (j > i)
+                    for (int j = 0; j < i * slope; j++)
                     {
-                        WorldGen.KillTile(j, i);
-                        WorldGen.PlaceTile(j, i, type);
+                        WorldGen.KillTile(i + x, y + j + i);
+                        WorldGen.PlaceTile(i + x, y + j + i, type);
                     }
                 }
             }
+            else
+            {
+                for (int i = 0; i < length; i++)
+                {
+                    for (int j = 0; j < i * -slope; j++)
+                    {
+                        WorldGen.KillTile(i + x, y - j + i);
+                        WorldGen.PlaceTile(i + x, y - j + i, type);
+                    }
+                }
+            }
+
+
         }
 
         private void CreateCrystallineStone(int x, int y, int height, int width, int slope)
