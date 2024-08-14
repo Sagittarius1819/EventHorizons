@@ -168,7 +168,7 @@ Items: {
 
 	CrystallineCore: {
 		DisplayName: Crystalline Core
-		Tooltip: ""
+		Tooltip: Infused with energy from the stars, Can be used as Star Cannon ammo. 50% Chance to be consumed.
 	}
 
 	CrystalliteBar: {
@@ -190,6 +190,9 @@ Projectiles: {
 	PrismPiercerProjectile.DisplayName: Prism Piercer Projectile
 	QCwhipprojectile.DisplayName: Q Cwhipprojectile
 	HiddenBladeProjectile.DisplayName: Hidden Blade Projectile
+	CrystallineCoreProjectile.DisplayName: Crystalline Core Projectile
+	OscilatingStar.DisplayName: Oscilating Star
+	OscillatingStar.DisplayName: Oscillating Star
 }
 
 Tiles: {

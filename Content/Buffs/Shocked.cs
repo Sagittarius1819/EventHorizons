@@ -14,7 +14,7 @@ namespace EventHorizons.Content.Buffs
         {
             if (npc.lifeRegen > 0)
                 npc.lifeRegen = 0;
-            npc.lifeRegen -= 10;
+            npc.lifeRegen -= 20;
 
         }
 

@@ -16,8 +16,8 @@ namespace EventHorizons.Content.Projectiles
         {
             base.SetDefaults();
             Projectile.DamageType = DamageClass.Melee;
-            Projectile.width = 50;
-            Projectile.height = 50;
+            Projectile.width = 25;
+            Projectile.height = 25;
             Projectile.aiStyle = 0;
             Projectile.friendly = true;
             Projectile.hostile = false;

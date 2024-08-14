@@ -29,7 +29,7 @@ namespace EventHorizons
                     }
                 }
             }
-            if (npc.type == NPCID.Guide)
+            if (npc.type == NPCID.Merchant)
             {
                 bool isModdedNPCAlive = Main.npc.Any(n => n.active && n.type == ModContent.NPCType<DarwinNPC>());
 
@@ -37,7 +37,7 @@ namespace EventHorizons
                 {
                     if (Main.rand.NextFloat() < 0.25f)
                     {
-                        chat = "placeholder2";
+                        chat = "placeholder1";
                     }
                 }
             }

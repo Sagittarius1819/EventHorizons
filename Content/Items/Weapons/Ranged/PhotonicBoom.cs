@@ -4,6 +4,7 @@ using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
 using EventHorizons.Content.Items.Materials;
 using EventHorizons.Content.Items.Weapons.Ammo;
+using EventHorizons.Content.Items.Weapons.Ranged.Crystalline;
 
 namespace EventHorizons.Content.Items.Weapons.Ranged
 {
@@ -36,7 +37,7 @@ namespace EventHorizons.Content.Items.Weapons.Ranged
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemType<PlasmaBlast>(), 50);
             recipe.AddIngredient(ItemType<SpaceDust>(), 5);
-            recipe.AddIngredient(ItemID.PhoenixBlaster, 1);
+            recipe.AddIngredient(ItemType<CrystallinePistol>(), 1);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }
