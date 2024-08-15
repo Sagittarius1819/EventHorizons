@@ -33,7 +33,7 @@ namespace TutorialMod.Common.Systems
 
             //Tunnel placed in middle
             //CreateEllipse(x, y, 45, 30, 2, ModContent.TileType<CrystallineStoneTile>());
-            GenerateSpike(x, y, 20, .5f, .4f, ModContent.TileType<CrystallineStoneTile>());
+            GenerateSpike(x, y, 20, -1f, -1f, ModContent.TileType<CrystallineStoneTile>());
 
         }
 
@@ -44,9 +44,9 @@ namespace TutorialMod.Common.Systems
 
         private void GenerateSpike(int x, int y, int length, float slope, float downSlope, int type)
         {
+            int helfLength = length / 2;
             if (slope > 0)
             {
-                int helfLength = length / 2;
                 for (int i = 0; i < helfLength; i++)
                 {
                     int topY = (int)(i * slope);
@@ -64,6 +64,27 @@ namespace TutorialMod.Common.Systems
                     {
                         WorldGen.KillTile(i + x + helfLength, topY + y - j);
                         WorldGen.PlaceTile(i + x + helfLength, topY + y - j, type);
+                    }
+                }
+            } else
+            {
+                for (int i = 0; i < helfLength; i++)
+                {
+                    int topY = (int)(i * -slope);
+                    for (int j = 0; j < topY; j++)
+                    {
+                        WorldGen.KillTile(i + x, y + j - topY);
+                        WorldGen.PlaceTile(i + x, y + j - topY, type);
+                    }
+                }
+
+                for (int i = 0; i < helfLength; i++)
+                {
+                    int topY = (int)(i * downSlope) + (int)((length / 2) * -slope);
+                    for (int j = 0; j < topY; j++)
+                    {
+                        WorldGen.KillTile(i + x + helfLength,y + j - topY);
+                        WorldGen.PlaceTile(i + x + helfLength, y + j - topY, type);
                     }
                 }
             }
