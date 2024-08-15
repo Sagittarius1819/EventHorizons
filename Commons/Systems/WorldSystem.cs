@@ -33,14 +33,15 @@ namespace TutorialMod.Common.Systems
 
             //Tunnel placed in middle
             //CreateEllipse(x, y, 45, 30, 2, ModContent.TileType<CrystallineStoneTile>());
-            CreateSpikesAroundEllipse(x, y, 40, 50, 4f, 20, 30, ModContent.TileType<CrystallineStoneTile>());
+            //CreateSpikesAroundEllipse(x, y, 40, 50, 7, 10, 15, ModContent.TileType<CrystallineStoneTile>());
             //GenerateSpike(x, y, 30, -.7f, -.3f, ModContent.TileType<CrystallineStoneTile>());
-
+            GenerateCrystallineCave(x, y, 30, 45, 8, ModContent.TileType<CrystallineStoneTile>(), 6, 10, 15);
         }
 
-        private void GenerateCrystallineCave(int x, int y)
+        private void GenerateCrystallineCave(int x, int y, int verticalRadius, int horizontalRadius, int thickness, int type, int spikeAmount, int minLength, int maxLength)
         {
-
+            CreateEllipse(x, y, verticalRadius, horizontalRadius, thickness, type);
+            CreateSpikesAroundEllipse(x, y, verticalRadius, horizontalRadius, spikeAmount, minLength, maxLength, type);
         }
 
         private void GenerateSpike(int x, int y, int length, float slope, float downSlope, int type)
@@ -105,12 +106,12 @@ namespace TutorialMod.Common.Systems
                 int topY = (int)Math.Sqrt(Math.Pow(verticalRadius, 2) - ((Math.Pow(i, 2) * Math.Pow(verticalRadius, 2)) / Math.Pow(horizontalRadius, 2)));
                 for (int j = 0; j < (topY + y) - (y - topY); j++)
                 {
-                    if (Main.tile[i + x, topY + y - j].TileType == TileID.Stone)
+                    if (Main.tile[x - i, topY + y - j].HasTile)
                     {
                         WorldGen.KillTile(i + x, topY + y - j);
                         WorldGen.PlaceTile(i + x, topY + y - j, type);
                     }
-                    if (Main.tile[x - i, topY + y - j].TileType == TileID.Stone)
+                    if (Main.tile[x - i, topY + y - j].HasTile)
                     {
                         WorldGen.KillTile(x - i, topY + y - j);
                         WorldGen.PlaceTile(x - i, topY + y - j, type);
@@ -140,13 +141,10 @@ namespace TutorialMod.Common.Systems
 
         }
 
-        private void CreateSpikesAroundEllipse(int x, int y, int verticalRadius, int horizontalRadius, float estimatedAmount, int minLength, int MaxLength, int type)
+        private void CreateSpikesAroundEllipse(int x, int y, int verticalRadius, int horizontalRadius, int amount, int minLength, int maxLength, int type)
         {
-            //GenerateSpike(x, y + verticalRadius, WorldGen.genRand.Next(minLength, MaxLength), 2, 4, type);
-            //GenerateSpike(x, y - verticalRadius, WorldGen.genRand.Next(minLength, MaxLength), -2, -4, type);
-
-            //GenerateSpike(x + horizontalRadius / 2, y + verticalRadius, WorldGen.genRand.Next(minLength * 4, MaxLength * 4), .5f, 4, type);
-            //GenerateSpike(x + horizontalRadius / 2, y - verticalRadius, WorldGen.genRand.Next(minLength * 4, MaxLength * 4), -.5f, -4, type);
+            int initialSpacing = horizontalRadius / amount;
+            int spacing = initialSpacing;
             for (int i = 0; i < horizontalRadius; i++)
             {
                 int topY = (int)Math.Sqrt(Math.Pow(verticalRadius, 2) - ((Math.Pow(i, 2) * Math.Pow(verticalRadius, 2)) / Math.Pow(horizontalRadius, 2)));
@@ -162,23 +160,28 @@ namespace TutorialMod.Common.Systems
                 WorldGen.KillTile(x - i, y - topY);
                 WorldGen.PlaceTile(x - i, y - topY, type);
 
+                if (i == spacing)
+                {
+                    spacing += initialSpacing;
+                    GenerateSpike(x + i - (horizontalRadius / 4), y + topY - (verticalRadius / 4), WorldGen.genRand.Next(minLength, maxLength), 5, 8, type);
+                    GenerateSpike(x - i, y + topY, WorldGen.genRand.Next(minLength, maxLength), 5, 8, type);
+
+                    GenerateSpike(x + i - (horizontalRadius / 4), y - topY + (verticalRadius / 4), WorldGen.genRand.Next(minLength, maxLength), -5, -8, type);
+                    GenerateSpike(x - i, y - topY, WorldGen.genRand.Next(minLength, maxLength), -5, -8, type);
+                }
+
+                //if (i == horizontalRadius - 1)
+                //{
+                //    int lengthOne = WorldGen.genRand.Next(minLength * 5, maxLength * 5);
+                //    int lengthTwo = WorldGen.genRand.Next(minLength * 5, maxLength * 5);
+                //    GenerateSpike(x + i, y + topY, WorldGen.genRand.Next(minLength * 5, maxLength * 5), .3f, .7f, type);
+                //    GenerateSpike(x - i - lengthOne / 2, y + topY, lengthOne, .3f, .7f, type);
+
+                //    GenerateSpike(x + i, y - topY, WorldGen.genRand.Next(minLength *  5, maxLength * 5), -.3f, -.7f, type);
+                //    GenerateSpike(x - i - lengthTwo / 2, y - topY, lengthTwo, -.3f, -.7f, type);
+                //}
+
             }
-            //float chance = estimatedAmount / (float) horizontalRadius;
-            //for (int i = 0; i < horizontalRadius; i++)
-            //{
-            //    int topY = (int)Math.Sqrt(Math.Pow(verticalRadius, 2) - ((Math.Pow(i, 2) * Math.Pow(verticalRadius, 2)) / Math.Pow(horizontalRadius, 2)));
-            //    for (int j = 0; j < (topY + y) - (y - topY); j++)
-            //    {
-
-            //        if (WorldGen.genRand.NextFloat() < chance)
-            //        {
-
-            //            GenerateSpike(x + i, y + topY, WorldGen.genRand.Next(minLength, MaxLength), WorldGen.genRand.Next(1, 5), WorldGen.genRand.Next(5, 10), type);
-            //        }
-
-            //    }
-
-            //}
 
 
         }
