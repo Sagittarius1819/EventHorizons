@@ -42,6 +42,98 @@ namespace TutorialMod.Common.Systems
         {
             CreateEllipse(x, y, verticalRadius, horizontalRadius, thickness, type);
             CreateSpikesAroundEllipse(x, y, verticalRadius, horizontalRadius, spikeAmount, minLength, maxLength, type);
+            WorldGen.digTunnel(x - 7, y, 7, -4, 5, 15, false);
+            PlaceCrystals(x, y);
+            
+        }
+
+        private void PlaceCrystals (int x, int y)
+        {
+            //int horizontalRadius = 25;
+            //int verticalRadius = 15;
+            //int amount = 3;
+            //int minLength = 5;
+            //int maxLength = 7;
+            //int type = ModContent.TileType<some_crystal_block_spritesheet>();
+            //int initialSpacing = horizontalRadius / amount;
+            //int spacing = initialSpacing;
+            //int additionalDisatnce = 2;
+            //for (int i = 0; i < horizontalRadius; i++)
+            //{
+            //    int topY = (int)Math.Sqrt(Math.Pow(verticalRadius, 2) - ((Math.Pow(i, 2) * Math.Pow(verticalRadius, 2)) / Math.Pow(horizontalRadius, 2)));
+            //    int distanceFromCeiling = -99;
+            //    if (i == spacing)
+            //    {
+            //        spacing += initialSpacing;
+
+            //        for (int j = 0; j < 10; j++)
+            //        {
+            //            if (Main.tile[x + i - (horizontalRadius / 4), y + topY - (verticalRadius / 4) + j].TileType == ModContent.TileType<CrystallineStoneTile>())
+            //            {
+            //                distanceFromCeiling = j + additionalDisatnce;
+            //                break;
+            //            }
+
+            //        }
+            //        if (distanceFromCeiling != -99)
+            //        {
+            //            GenerateSpike(x + i - (horizontalRadius / 4), y + topY - (verticalRadius / 4) + distanceFromCeiling, WorldGen.genRand.Next(minLength, maxLength), -5, -8, type);
+            //        }
+            //        distanceFromCeiling = -99;
+
+
+            //        for (int j = 0; j < 10; j++)
+            //        {
+            //            if (Main.tile[x - i, y + topY + j].TileType == ModContent.TileType<CrystallineStoneTile>())
+            //            {
+            //                distanceFromCeiling = j + additionalDisatnce;
+            //                break;
+            //            }
+
+            //        }
+            //        if (distanceFromCeiling != -99)
+            //        {
+            //            GenerateSpike(x - i, y + topY + distanceFromCeiling, WorldGen.genRand.Next(minLength, maxLength), -5, -8, type);
+            //        }
+            //        distanceFromCeiling = -99;
+
+            //        for (int j = 0; j < 10; j++)
+            //        {
+            //            if (Main.tile[x + i - (horizontalRadius / 4), y + topY - (verticalRadius / 4) - j].TileType == ModContent.TileType<CrystallineStoneTile>())
+            //            {
+            //                distanceFromCeiling = -j - additionalDisatnce;
+            //                break;
+            //            }
+
+            //        }
+            //        if (distanceFromCeiling != -99)
+            //        {
+            //            GenerateSpike(x + i - (horizontalRadius / 4), y - topY + (verticalRadius / 4) + distanceFromCeiling, WorldGen.genRand.Next(minLength, maxLength), 5, 8, type);
+            //        }
+            //        distanceFromCeiling = -99;
+
+            //        for (int j = 0; j < 10; j++)
+            //        {
+            //            if (Main.tile[x + i - (horizontalRadius / 4), y + topY - (verticalRadius / 4) - j].TileType == ModContent.TileType<CrystallineStoneTile>())
+            //            {
+            //                distanceFromCeiling = -j - additionalDisatnce;
+            //                break;
+            //            }
+
+            //        }
+            //        if (distanceFromCeiling != -99)
+            //        {
+            //            GenerateSpike(x - i, y - topY + distanceFromCeiling, WorldGen.genRand.Next(minLength, maxLength), 5, 8, type);
+            //        }
+                    
+                    
+            //    }
+
+            //}
+
+
+            //horrad = 25
+            //vertrad = 15
         }
 
         private void GenerateSpike(int x, int y, int length, float slope, float downSlope, int type)
@@ -170,16 +262,6 @@ namespace TutorialMod.Common.Systems
                     GenerateSpike(x - i, y - topY, WorldGen.genRand.Next(minLength, maxLength), -5, -8, type);
                 }
 
-                //if (i == horizontalRadius - 1)
-                //{
-                //    int lengthOne = WorldGen.genRand.Next(minLength * 5, maxLength * 5);
-                //    int lengthTwo = WorldGen.genRand.Next(minLength * 5, maxLength * 5);
-                //    GenerateSpike(x + i, y + topY, WorldGen.genRand.Next(minLength * 5, maxLength * 5), .3f, .7f, type);
-                //    GenerateSpike(x - i - lengthOne / 2, y + topY, lengthOne, .3f, .7f, type);
-
-                //    GenerateSpike(x + i, y - topY, WorldGen.genRand.Next(minLength *  5, maxLength * 5), -.3f, -.7f, type);
-                //    GenerateSpike(x - i - lengthTwo / 2, y - topY, lengthTwo, -.3f, -.7f, type);
-                //}
 
             }
 
