@@ -25,6 +25,7 @@ namespace EventHorizons.Content.NPCs.Enemies.CCenemies
         }
         public override void SetDefaults()
         {
+            SpawnModBiomes = new int[0][1, ];
             NPC.width = 34;
             NPC.height = 24;
             NPC.damage = 30;

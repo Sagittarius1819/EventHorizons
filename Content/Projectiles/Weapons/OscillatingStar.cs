@@ -34,11 +34,19 @@ namespace EventHorizons.Content.Projectiles.Weapons
 
             float scale = 0.5f + 0.5f * (float)Math.Sin(Main.GameUpdateCount * 0.1f);
             Projectile.scale = scale;
+            if (Projectile.timeLeft < 240) 
+            {
+                float fadeAmount = Projectile.timeLeft / 240f;
+                Projectile.alpha = (int)((1 - fadeAmount) * 255);
+            }
+            if (Projectile.alpha >= 255)
+            {
+                Projectile.Kill();
+            }
         }
 
         public override bool PreDraw(ref Color lightColor)
         {
-            // Draw the projectile with its current scale
             Main.EntitySpriteDraw(
                 TextureAssets.Projectile[Projectile.type].Value,
                 Projectile.Center - Main.screenPosition,

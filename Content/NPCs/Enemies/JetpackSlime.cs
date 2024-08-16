@@ -27,10 +27,10 @@ namespace EventHorizons.Content.NPCs.Enemies
             AIType = NPCID.GreenSlime;
             AnimationType = NPCID.GreenSlime;
         }
-        public override float SpawnChance(NPCSpawnInfo spawnInfo)
+       /* public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
             return SpawnCondition.OverworldDaySlime.Chance * 0.25f;
-        }
+        } */
         public override void FindFrame(int frameHeight)
         {
             NPC.frameCounter++;
